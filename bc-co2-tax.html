@@ -457,41 +457,15 @@ function main () {
         element.addEventListener('change', graph);
     })
 }
-try {
-    var oReq = new XMLHttpRequest();
-    oReq.addEventListener("load", main);
-    oReq.open("GET", "co2-data.csv");
-    oReq.send();
-} catch (e) {
-    console.log(e);
-}
+
+var oReq = new XMLHttpRequest();
+oReq.addEventListener("load", main);
+oReq.open("GET", "co2-data.csv");
+oReq.send();
 
 </script>
-
-<!-- 
-The 2008 recession caused a huge reduction in emissions.
-The caron tax rate is as follows:
-2008, "Carbon Tax $/tonne",,, $10
-2009, "Carbon Tax $/tonne",,, $15
-2010, "Carbon Tax $/tonne",,, $20
-2011, "Carbon Tax $/tonne",,, $25
-2012, "Carbon Tax $/tonne",,, $30
-2013, "Carbon Tax $/tonne",,, $30
-2014, "Carbon Tax $/tonne",,, $30
-2015, "Carbon Tax $/tonne",,, $30
-2016, "Carbon Tax $/tonne",,, $30
-2018, "Carbon Tax $/tonne",,, $35
-2019, "Carbon Tax $/tonne",,, $40
-
-The population of BC is as follows:
-1991, "3,282,061"
-1996, "3,724,500"
-2001, "3,907,738"
-2006, "4,113,487"
-2011, "4,400,057"
-2016, "4,648,055"
--->
         </content>
+        <img src="tax-pop-graph.png" />
         <note>https://www2.gov.bc.ca/assets/gov/environment/climate-change/data/provincial-inventory/2017/2017_provincial_inventory.xlsx</note>
     </body>
 </html>
