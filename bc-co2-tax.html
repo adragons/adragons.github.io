@@ -1,0 +1,497 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>BC CO2 emissions</title>
+
+        <link rel="stylesheet" href="css.css" />
+        <script type="text/javascript" src="chart.js"></script>
+
+    </head>
+    <body>
+        <content>
+<script type="text/javascript">
+let year_csv = `1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017`;
+let data = [];
+let chart
+// colours from: http://godsnotwheregodsnot.blogspot.com/2013/11/kmeans-color-quantization-seeding.html
+let colours = [/*"#FFFF00",*/ "#1CE6FF", "#FF34FF", "#FF4A46", "#008941", "#006FA6", "#A30059",
+/*"#FFDBE5",*/ "#7A4900", "#0000A6", "#63FFAC", "#B79762", "#004D43", "#8FB0FF", "#997D87",
+"#5A0007", "#809693", /*"#FEFFE6",*/ "#1B4400", "#4FC601", "#3B5DFF", "#4A3B53", "#FF2F80",
+"#61615A", "#BA0900", "#6B7900", "#00C2A0", "#FFAA92", "#FF90C9", "#B903AA", "#D16100",
+/*"#DDEFFF",*/ "#000035", "#7B4F4B", "#A1C299", "#300018", "#0AA6D8", "#013349", "#00846F",
+"#372101", "#FFB500", "#C2FFED", "#A079BF", "#CC0744", "#C0B9B2", "#C2FF99", "#001E09",
+"#00489C", "#6F0062", "#0CBD66", "#EEC3FF", "#456D75", "#B77B68", "#7A87A1", "#788D66",
+"#885578", "#FAD09F", "#FF8A9A", "#D157A0", "#BEC459", "#456648", "#0086ED", "#886F4C",
+"#34362D", "#B4A8BD", "#00A6AA", "#452C2C", "#636375", "#A3C8C9", "#FF913F", "#938A81",
+"#575329", "#00FECF", "#B05B6F", "#8CD0FF", "#3B9700", "#04F757", "#C8A1A1", "#1E6E00",
+"#7900D7", "#A77500", "#6367A9", "#A05837", "#6B002C", "#772600", "#D790FF", "#9B9700",
+"#549E79", "#FFF69F", "#201625", "#72418F", "#BC23FF", "#99ADC0", "#3A2465", "#922329",
+"#5B4534", "#FDE8DC", "#404E55", "#0089A3", "#CB7E98", "#A4E804", "#324E72", "#6A3A4C",
+"#83AB58", "#001C1E", "#D1F7CE", "#004B28", "#C8D0F6", "#A3A489", "#806C66", "#222800",
+"#BF5650", "#E83000", "#66796D", "#DA007C", "#FF1A59", "#8ADBB4", "#1E0200", "#5B4E51",
+"#C895C5", "#320033", "#FF6832", "#66E1D3", "#CFCDAC", "#D0AC94", "#7ED379", "#012C58",
+"#7A7BFF", "#D68E01", "#353339", "#78AFA1", "#FEB2C6", "#75797C", "#837393", "#943A4D",
+"#B5F4FF", "#D2DCD5", "#9556BD", "#6A714A", "#001325", "#02525F", "#0AA3F7", "#E98176",
+"#DBD5DD", "#5EBCD1", "#3D4F44", "#7E6405", "#02684E", "#962B75", "#8D8546", "#9695C5",
+"#E773CE", "#D86A78", "#3E89BE", "#CA834E", "#518A87", "#5B113C", "#55813B", "#E704C4",
+"#00005F", "#A97399", "#4B8160", "#59738A", "#FF5DA7", "#F7C9BF", "#643127", "#513A01",
+"#6B94AA", "#51A058", "#A45B02", "#1D1702", "#E20027", "#E7AB63", "#4C6001", "#9C6966",
+"#64547B", "#97979E", "#006A66", "#391406", "#F4D749", "#0045D2", "#006C31", "#DDB6D0",
+"#7C6571", "#9FB2A4", "#00D891", "#15A08A", "#BC65E9", "#FFFFFE", "#C6DC99", "#203B3C",
+"#671190", "#6B3A64", "#F5E1FF", "#FFA0F2", "#CCAA35", "#374527", "#8BB400", "#797868",
+"#C6005A", "#3B000A", "#C86240", "#29607C", "#402334", "#7D5A44", "#CCB87C", "#B88183",
+"#AA5199", "#B5D6C3", "#A38469", "#9F94F0", "#A74571", "#B894A6", "#71BB8C", "#00B433",
+"#789EC9", "#6D80BA", "#953F00", "#5EFF03", "#E4FFFC", "#1BE177", "#BCB1E5", "#76912F",
+"#003109", "#0060CD", "#D20096", "#895563", "#29201D", "#5B3213", "#A76F42", "#89412E",
+"#1A3A2A", "#494B5A", "#A88C85", "#F4ABAA", "#A3F3AB", "#00C6C8", "#EA8B66", "#958A9F",
+"#BDC9D2", "#9FA064", "#BE4700", "#658188", "#83A485", "#453C23", "#47675D", "#3A3F00",
+"#061203", "#DFFB71", "#868E7E", "#98D058", "#6C8F7D", "#D7BFC2", "#3C3E6E", "#D83D66",
+"#2F5D9B", "#6C5E46", "#D25B88", "#5B656C", "#00B57F", "#545C46", "#866097", "#365D25",
+"#252F99", "#00CCFF", "#674E60", "#FC009C", "#92896B"];
+
+function csv_line (line) {
+    let data = [];
+    let i = 0;
+    let l = line.length;
+    let datum = '';
+    while (i < l) {
+        switch (line[i]) {
+            case " ":
+                i++;
+                break;
+
+            case '"':
+                i++;
+                while (i<l && line[i] !== '"') {
+                    datum += line[i];
+                    i++;
+                }
+                i++;
+                data.push(datum);
+                datum = '';
+                while (' '.indexOf(line[i]) !== -1) {
+                    i++;
+                }
+                i++;
+                continue;
+            
+            case ",":
+                data.push('');
+                datum = '';
+                i++;
+                break;
+
+            default:
+                while (i<l && line[i] !== ',') {
+                    datum += line[i];
+                    i++;
+                }
+                data.push(datum);
+                datum = '';
+                i++;
+        }
+    }
+    return data.map(str => {
+        str = str
+        .replace(/^\s*/g, '') // start whitespace
+        .replace(/\s*$/g,'') // end whitespace
+        .replace(/(\d)(\s|,)(\d)/g, '$1$3'); // space or comma in numbers
+        str = str.match(/^\d/) ? parseFloat(str) : str;
+        str = str === "-" ? 0 : str;
+        return str;
+    });
+}
+
+function select (where) {
+    let fields = ['year', 'category a', 'category b', 'category c', 'emissions'];
+    var filters = [];
+    let ret = data;
+    for (let i in where) {
+        let op    = where[i].match(/[\!\<\>=]+/)[0];
+        let value = where[i].split(op)[1];
+        let index = fields.indexOf(i);
+        switch (op) {
+            case '<=>':
+                let min = parseInt(where[i].split(op)[0]);
+                let max = parseInt(where[i].split(op)[1]);
+                ret = ret.filter(row => row[index] >= min && row[index] <= max);
+                break;
+            case '=':
+                ret = ret.filter(row => row[index] == value);
+                break;
+            case '!=':
+                ret = ret.filter(row => row[index] != value);
+                break;
+            case '>':
+                ret = ret.filter(row => row[index] > value);
+                break;
+            case '>=':
+                ret = ret.filter(row => row[index] >= value);
+                break;
+            case '<':
+                ret = ret.filter(row => row[index] < value);
+                break;
+            case '<=':
+                ret = ret.filter(row => row[index] <= value);
+                break;
+        }
+    }
+    return ret;
+
+}
+
+function graph() {
+    clearTimeout(graph.debounce);
+    graph.debounce = setTimeout(_graph, 1000/60);
+}
+graph.debounce = 0;
+
+function _graph () {
+    qsa('label.hide').forEach(e => {e.className = '';});
+    qsa('label[data-label] span').forEach(e => {e.innerHTML = ''});
+    let minYear = document.getElementById('minyear').innerText;
+    let maxYear = document.getElementById('maxyear').innerText;
+    chart.data.datasets = [];
+
+    let years = [];
+    for (let i=minYear; i<=maxYear; i++) {
+        years.push(i);
+    }
+    chart.data.labels = years;
+
+    let showTrends = document.getElementById('trendline').checked;
+    let threshold = +document.getElementById('co2threshold').innerHTML;
+
+
+    qsa('input[type="checkbox"]')
+        .filter(e => e.checked)
+        .forEach(function(e){
+            let labelElement = e.parentElement;
+            let field = labelElement.getAttribute('data-field');
+            let label = labelElement.getAttribute('data-label');
+            let color = labelElement.getAttribute('data-color');
+            let where = {
+                'year': minYear+'<=>'+maxYear,
+                'category a': '=',
+                'category b': '=',
+                'category c': '=',
+            };
+            where[field] = '='+label;
+            switch (field) {
+                case 'category c':
+                    delete where['category b'];
+                case 'category b':
+                    delete where['category a'];
+            }
+            let data = select(where);
+
+            if (threshold > 0) {
+                let min = Math.min(...data.map(r => r[4]));
+                if (min < threshold) {
+                    return;
+                }
+            }
+
+            if (showTrends) {
+                let trendline = calcTrendline(data.map((r, i) => [(+minYear)+i, r[4]]));
+                if (trendline) {
+                    chart.data.datasets.push({
+                        data: trendline,
+                        backgroundColor: Color(color).alpha(0.4).rgbString(),
+                        borderColor: Color(color).alpha(0.4).rgbString()
+                    });
+                }
+            }
+            
+            let dataset = data.map(r => r[4]);
+            
+            chart.data.datasets.push({
+                label: label,
+                data: dataset,
+                backgroundColor: color,
+                borderColor: color
+            });
+            let diff = dataset[dataset.length-1] - dataset[0];
+            diff = Math.round(diff, 2);
+            Array.from(labelElement.querySelectorAll('span')).forEach(e =>e.innerHTML = '('+diff+')');
+        });
+    
+    chart.update();
+}
+
+function qsa (query) {
+    return Array.from(document.querySelectorAll(query));
+}
+function selectNone () {
+    qsa('input[type="checkbox"]').filter(e=>e.checked=false);
+    graph();
+}
+function selectIncreasing () {
+    selectChange('<');
+}
+function selectDecreasing () {
+    selectChange('>');
+}
+function selectChange (op) {
+    qsa('input[type="checkbox"]').filter(e=>e.checked=false);
+    let trends = getTrends();
+
+    if (op === '>') {
+        trends = trends.filter(e => {
+            if (!e.trend) return false;
+            return (e.trend[0] - e.trend[e.trend.length-1]) > 0;
+        });
+    } else {
+        trends = trends.filter(e => {
+            if (!e.trend) return false;
+            return (e.trend[0] - e.trend[e.trend.length-1]) < 0;
+        });
+    }
+
+    trends.forEach(e => {
+        qsa(`label[data-label="${e.label}"][data-field="${e.field}"]`)[0].click();
+    });
+
+    graph();
+}
+function getTrends () {
+    let minYear = document.getElementById('minyear').innerText;
+    let maxYear = document.getElementById('maxyear').innerText;
+    let labels = qsa('label[data-field]');
+    let trends = [];
+    for (let i=0; i<labels.length; i++) {
+        let labelElement = labels[i];
+        let field = labelElement.getAttribute('data-field');
+        let label = labelElement.getAttribute('data-label');
+
+        let where = {
+            'year': minYear+'<=>'+maxYear,
+            'category a': '=',
+            'category b': '=',
+            'category c': '=',
+        };
+        where[field] = '='+label;
+        switch (field) {
+            case 'category c':
+                delete where['category b'];
+            case 'category b':
+                delete where['category a'];
+        }
+        let data = select(where);
+
+        let trend = calcTrendline(data.map((r, i) => [(+minYear)+i, r[4]]));
+        trends.push({
+            'label': label,
+            'field': field,
+            'trend': trend
+        });
+    }
+
+    return trends;
+}
+
+function calcTrendline (data) {
+    if (data.length == 0) return null;
+
+    let xAvg = 0;
+    let yAvg = 0;
+    let m = 0;
+    let mDiffSquared = 0;
+
+    for (let i in data) {
+        xAvg += data[i][0];
+        yAvg += data[i][1];
+    }
+    xAvg /= data.length;
+    yAvg /= data.length;
+
+    for (let i in data) {
+        m += (data[i][0] - xAvg)*(data[i][1] - yAvg);
+        mDiffSquared += Math.pow(data[i][0] - xAvg, 2);
+    }
+
+    if (mDiffSquared === 0 || mDiffSquared === NaN) return null;
+    m /= mDiffSquared;
+
+    let b = yAvg - m*xAvg;
+    return data.map(l => (m*l[0]) + b);
+}
+
+function main () {
+
+    let csv = this.responseText;
+
+    data = csv.split("\n").map(csv_line);
+    // console.log(data);
+    let years = csv_line(year_csv);
+
+    let maxCo2 = Math.max(...select({
+        'category c': '!='
+    }).map(e => e[4]));
+
+    let filterTableOptions = select({
+        'year': '=1990',
+        'category a': '!=TOTAL'
+    });
+
+    let html = `<div>`;
+
+    let superCategory = '';
+    for (let i=0; i<filterTableOptions.length; i++) {
+        let field = '';
+        let label = '';
+        let spacing = '';
+        if (filterTableOptions[i][3] !== '') {
+            field = 'category c';
+            spacing = '&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⊢';
+            label = filterTableOptions[i][3];
+        } else if (filterTableOptions[i][2] !== '') {
+            field = 'category b';
+            spacing = '&nbsp;&nbsp;⊢';
+            label = filterTableOptions[i][2];
+        } else if (filterTableOptions[i][1] !== '') {
+            field = 'category a';
+            spacing = (new Array(1)).join('&nbsp;');
+            label = filterTableOptions[i][1];
+        }
+        if (filterTableOptions[i][1] !== superCategory) {
+            if (superCategory !== '') {
+                html += `</div><div>`;
+            }
+            superCategory = filterTableOptions[i][1];
+        }
+        html += `
+        <label style="color: ${colours[i%colours.length]}"
+            data-color="${colours[i%colours.length]}"
+            data-field="${field}"
+            data-label="${label}">
+            <input type="checkbox" /> ${spacing}<span></span> ${label}
+        </label><br />`;
+    }
+
+    qsa('content') [0].innerHTML = `
+        <canvas id="chart-0" style="display: block; height: 100%;"></canvas>
+
+        <div class="box row" style="max-width: 100vw;">
+
+            <div style="width: 20vw; white-space: nowrap;">
+                <label>Min Year: <span id="minyear">2008</span><br />
+                    <input type="range" oninput="document.getElementById('minyear').innerHTML=this.value; graph()" min="${years[0]}" max="${years[years.length-1]}" value="2008" />
+                </label><br />
+                <label>Max Year: <span id="maxyear">2017</span><br />
+                    <input type="range" oninput="document.getElementById('maxyear').innerHTML=this.value; graph()" min="${years[0]}" max="${years[years.length-1]}" value="${years[years.length-1]}" />
+                </label><br />
+                <label>CO2 threshold: <span id="co2threshold">0</span><br />
+                    <input type="range" oninput="document.getElementById('co2threshold').innerHTML=this.value; graph()" min="0" max="${maxCo2}" step="1" value="0" />
+                </label><br />
+                <label>Trend Lines: <input type="checkbox" id="trendline" onchange="graph()" /></label><br />
+                <button onclick="selectDecreasing()">Select Decreasing</button> <button onclick="selectIncreasing()">Select Increasing</button><br />
+                <button onclick="selectNone()">Unselect all</button><br />
+<br />
+                <label style="color: #FFFF00" data-color="#FFFF00" data-field="category a" data-label="TOTAL">
+                    <input type="checkbox"> <span></span> TOTAL
+                </label>
+        
+            </div>
+            <style>
+                .box.even {
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                }
+                .box.even div {
+                    margin: 10px;
+                }
+            </style>
+            <div class="box even" style="width: 80vw; max-width: 80vw; ">
+                ${html}
+            </div>
+
+        </div>
+    `;
+
+
+    var chart_data = {
+        labels: years,
+        datasets: []
+    };
+
+    var options = {
+        legend: {
+            display: false,
+            labels: {
+                fontColor: 'rgb(255, 99, 132)'
+            },
+            position: 'left'
+        },
+        tooltips: {
+            enabled: true
+        },
+        elements: {
+            line: {
+                fill: false,
+                tension: 0 // disables bezier curves
+            },
+            point: {
+                // hoverBackgroundColor: makeHalfAsOpaque,
+                // radius: adjustRadiusBasedOnData,
+                // pointStyle: alternatePointStyles,
+                // hoverRadius: 15,
+            }
+        },
+        animation: {
+            duration: 0 // general animation time
+        },
+        hover: {
+            animationDuration: 0 // duration of animations when hovering an item
+        },
+        responsiveAnimationDuration: 0 // animation duration after a resize
+    };
+
+    chart = new Chart('chart-0', {
+        type: 'line',
+        data: chart_data,
+        options: options
+    });
+
+    qsa('label[data-label] input[type="checkbox"]').forEach(function(element){
+        element.addEventListener('change', graph);
+    })
+}
+try {
+    var oReq = new XMLHttpRequest();
+    oReq.addEventListener("load", main);
+    oReq.open("GET", "co2-data.csv");
+    oReq.send();
+} catch (e) {
+    console.log(e);
+}
+
+</script>
+
+<!-- 
+The 2008 recession caused a huge reduction in emissions.
+The caron tax rate is as follows:
+2008, "Carbon Tax $/tonne",,, $10
+2009, "Carbon Tax $/tonne",,, $15
+2010, "Carbon Tax $/tonne",,, $20
+2011, "Carbon Tax $/tonne",,, $25
+2012, "Carbon Tax $/tonne",,, $30
+2013, "Carbon Tax $/tonne",,, $30
+2014, "Carbon Tax $/tonne",,, $30
+2015, "Carbon Tax $/tonne",,, $30
+2016, "Carbon Tax $/tonne",,, $30
+2018, "Carbon Tax $/tonne",,, $35
+2019, "Carbon Tax $/tonne",,, $40
+
+The population of BC is as follows:
+1991, "3,282,061"
+1996, "3,724,500"
+2001, "3,907,738"
+2006, "4,113,487"
+2011, "4,400,057"
+2016, "4,648,055"
+-->
+        </content>
+        <note>https://www2.gov.bc.ca/assets/gov/environment/climate-change/data/provincial-inventory/2017/2017_provincial_inventory.xlsx</note>
+    </body>
+</html>
