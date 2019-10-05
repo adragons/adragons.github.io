@@ -45,7 +45,7 @@ let population = {
 let dataset = [];
 let dataset_json = '';
 let CO2 = 'co2e';
-let CO2PERCAPITA = 'co2/capita';
+let CO2PERCAPITA = 'co2pcapita';
 let unit = CO2;
 let chart;
 let fields;
@@ -198,6 +198,12 @@ function _graph () {
     let showTrends = document.getElementById('trendline').checked;
     let threshold = +document.getElementById('co2threshold').innerHTML;
 
+    qsa('#url')[0].value = `${window.location.protocol}//${window.location.host}${window.location.pathname}#` +
+        `${minYear},${maxYear},` +
+        `${threshold},`+
+        (showTrends?'1':'0')+`,`+
+        `${unit},`+
+        qsa('label[data-label] input[type="checkbox"]').filter(e => e.checked).map(e=>encodeURIComponent(e.parentElement.getAttribute('data-label'))).join(',');
 
     qsa('input[type="checkbox"]')
         .filter(e => e.checked)
@@ -439,13 +445,13 @@ function main () {
 
             <div style="width: 20vw; white-space: nowrap;">
                 <label>Min Year: <span id="minyear">2008</span><br />
-                    <input type="range" oninput="document.getElementById('minyear').innerHTML=this.value; graph()" min="${years[0]}" max="${years[years.length-1]}" value="2008" />
+                    <input type="range" oninput="document.getElementById('minyear').innerHTML=this.value; graph()" min="${years[0]}" max="${years[years.length-1]}" value="2008" id="minyearrange" />
                 </label><br />
                 <label>Max Year: <span id="maxyear">2017</span><br />
-                    <input type="range" oninput="document.getElementById('maxyear').innerHTML=this.value; graph()" min="${years[0]}" max="${years[years.length-1]}" value="${years[years.length-1]}" />
+                    <input type="range" oninput="document.getElementById('maxyear').innerHTML=this.value; graph()" min="${years[0]}" max="${years[years.length-1]}" value="${years[years.length-1]}" id="maxyearrange" />
                 </label><br />
                 <label>CO2 threshold: <span id="co2threshold">0</span><br />
-                    <input type="range" oninput="document.getElementById('co2threshold').innerHTML=this.value; graph()" min="0" max="${maxCo2}" step="1" value="0" />
+                    <input type="range" oninput="document.getElementById('co2threshold').innerHTML=this.value; graph()" min="0" max="${maxCo2}" step="1" value="0" id="co2thresholdrange" />
                 </label><br />
                 <label>Trend Lines: <input type="checkbox" id="trendline" onchange="graph()" /></label><br />
                 <button onclick="selectDecreasing()">Select Decreasing</button> <button onclick="selectIncreasing()">Select Increasing</button><br />
@@ -453,8 +459,8 @@ function main () {
                 <br />
                 <fieldset>
                     <legend>Unit</legend>
-                    <label>kt CO2e <input type="radio" name="unit" checked="checked" value="1" onchange="setUnit('${CO2}')" /></label><br />
-                    <label>t CO2e / per capita <input type="radio" name="unit" value="2" onchange="setUnit('${CO2PERCAPITA}')" /></label><br />
+                    <label>kt CO2e <input type="radio" name="unit" checked="checked" value="1" onchange="setUnit('${CO2}')" id="unitco2" /></label><br />
+                    <label>t CO2e / per capita <input type="radio" name="unit" value="2" onchange="setUnit('${CO2PERCAPITA}')" id="unitco2percapita" /></label><br />
                 </fieldset>
                 <br />
 
@@ -464,6 +470,11 @@ function main () {
                 </label-->
         
                 <p style="white-space: break-spaces;">If the graph doesn't update try checking another box or fiddling with the sliders.</p>
+                <br />
+                <p>
+                    URL to share:<br />
+                    <input type="text" id="url" style="display:block;" />
+                </p>
             </div>
             <style>
                 #source-checkboxes div {
@@ -551,7 +562,28 @@ function main () {
 
     qsa('label[data-label] input[type="checkbox"]').forEach(function(element){
         element.addEventListener('change', graph);
-    })
+    });
+
+
+    let hash = window.location.hash.substr(1).split(',');
+    qsa('#minyearrange')[0].value = hash.shift();
+    qsa('#maxyearrange')[0].value = hash.shift();
+    qsa('#co2thresholdrange')[0].value = hash.shift();
+    qsa('#trendline')[0].checked = hash.shift();
+    let selectedUnit = hash.shift();
+    qsa('#unitco2')[0].checked = selectedUnit === CO2;
+    qsa('#unitco2percapita')[0].checked = selectedUnit === CO2;
+
+    qsa('#minyearrange')[0].oninput();
+    qsa('#maxyearrange')[0].oninput();
+    qsa('#co2thresholdrange')[0].oninput();
+    qsa('label[data-label] input[type="checkbox"]').map(e=>e.checked=false);
+
+    hash.forEach(e => {
+        e = decodeURIComponent(e);
+        qsa(`label[data-label="${e}"] input`)[0].checked=true;
+    });
+    graph();
 }
 
 var oReq = new XMLHttpRequest();
