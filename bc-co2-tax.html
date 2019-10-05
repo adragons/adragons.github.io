@@ -395,6 +395,7 @@ function main () {
         let field = '';
         let label = '';
         let spacing = '';
+        let title = filterTableOptions[i][7] ? `title="${filterTableOptions[i][7]}"` : '';
         if (filterTableOptions[i][3] !== '') {
             field = 'category c';
             spacing = '&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⊢';
@@ -419,7 +420,8 @@ function main () {
         <label style="color: ${colours[i%colours.length]}"
             data-color="${colours[i%colours.length]}"
             data-field="${field}"
-            data-label="${label}">
+            data-label="${label}"
+            ${title}>
             <input type="checkbox" /> ${spacing}<span></span> ${label}
         </label><br />`;
 

@@ -141,7 +141,7 @@ year, category a, category b, category c, value, axis, show on left-menu, descri
 2015,ENERGY,Stationary Combustion Sources,,19907.0462407693, ,,
 2016,ENERGY,Stationary Combustion Sources,,21078.2072754336, ,,
 2017,ENERGY,Stationary Combustion Sources,,21384.5437033216, ,,
-1990,ENERGY,Public Electricity and Heat Production,,807.138593515, ,,
+1990,ENERGY,Public Electricity and Heat Production,,807.138593515, ,,"Production  of  electricity  and  useful  heat  in  public or  privately  owned utility  thermal  power plantswhose primary activity is supplying electricity to the public."
 1991,ENERGY,Public Electricity and Heat Production,,474.225079172, ,,
 1992,ENERGY,Public Electricity and Heat Production,,940.902728773, ,,
 1993,ENERGY,Public Electricity and Heat Production,,1962.8274933864, ,,
@@ -169,7 +169,7 @@ year, category a, category b, category c, value, axis, show on left-menu, descri
 2015,ENERGY,Public Electricity and Heat Production,,503.607398674015, ,,
 2016,ENERGY,Public Electricity and Heat Production,,677.595653813765, ,,
 2017,ENERGY,Public Electricity and Heat Production,,574.239169432135, ,,
-1990,ENERGY,Petroleum Refining Industries,,1235.85655609332, ,,
+1990,ENERGY,Petroleum Refining Industries,,1235.85655609332, ,,"Petroleum refineries; direct emissions from the production of petroleum products from a raw feedstock."
 1991,ENERGY,Petroleum Refining Industries,,1232.55639887841, ,,
 1992,ENERGY,Petroleum Refining Industries,,1041.87626136222, ,,
 1993,ENERGY,Petroleum Refining Industries,,717.51421883945, ,,
@@ -225,7 +225,7 @@ year, category a, category b, category c, value, axis, show on left-menu, descri
 2015,ENERGY,Oil and Gas Extraction,,7069.85132823853, ,,
 2016,ENERGY,Oil and Gas Extraction,,7433.11810218423, ,,
 2017,ENERGY,Oil and Gas Extraction,,7242.14691278019, ,,
-1990,ENERGY,Mining,,618.679324150357, ,,
+1990,ENERGY,Mining,,618.679324150357, ,,"Metal and non-metal mines, stone quarries and gravel pits, mineral exploration and contract drilling operations; natural gas and conventional oil production facilities."
 1991,ENERGY,Mining,,631.015576640473, ,,
 1992,ENERGY,Mining,,436.541096255833, ,,
 1993,ENERGY,Mining,,520.135773143027, ,,
@@ -253,7 +253,7 @@ year, category a, category b, category c, value, axis, show on left-menu, descri
 2015,ENERGY,Mining,,457.826052661471, ,,
 2016,ENERGY,Mining,,500.157371015768, ,,
 2017,ENERGY,Mining,,468.955450353663, ,,
-1990,ENERGY,Manufacturing Industries,,6518.3954840618, ,,
+1990,ENERGY,Manufacturing Industries,,6518.3954840618, ,,"Production of iron and steel, non-ferrous metals, pulp and paper, chemicals, and other non-metallic mineral products."
 1991,ENERGY,Manufacturing Industries,,6187.60577022683, ,,
 1992,ENERGY,Manufacturing Industries,,5561.44466228489, ,,
 1993,ENERGY,Manufacturing Industries,,6013.69834970228, ,,
@@ -281,7 +281,7 @@ year, category a, category b, category c, value, axis, show on left-menu, descri
 2015,ENERGY,Manufacturing Industries,,4434.85600297792, ,,
 2016,ENERGY,Manufacturing Industries,,4689.0260650456, ,,
 2017,ENERGY,Manufacturing Industries,,4981.96991289764, ,,
-1990,ENERGY,Construction,,307.480429514, ,,
+1990,ENERGY,Construction,,307.480429514, ,,"Building and road construction, and other construction activities."
 1991,ENERGY,Construction,,270.70932134, ,,
 1992,ENERGY,Construction,,321.43486451155, ,,
 1993,ENERGY,Construction,,344.3292671829, ,,
@@ -309,7 +309,7 @@ year, category a, category b, category c, value, axis, show on left-menu, descri
 2015,ENERGY,Construction,,70.9212539, ,,
 2016,ENERGY,Construction,,95.3266744, ,,
 2017,ENERGY,Construction,,96.6500397, ,,
-1990,ENERGY,Commercial and Institutional,,2955.88683359476, ,,
+1990,ENERGY,Commercial and Institutional,,2955.88683359476, ,,"Emissions primarily from the combustion of fuel to heat the buildings, excluding electricity. Fuel  used  by  service  industries  related  to  mining,wholesale  and  retail  trade,  finance  and business services, education,health and social services."
 1991,ENERGY,Commercial and Institutional,,3218.46073695851, ,,
 1992,ENERGY,Commercial and Institutional,,3327.48671845433, ,,
 1993,ENERGY,Commercial and Institutional,,3720.1476987292, ,,
@@ -337,7 +337,7 @@ year, category a, category b, category c, value, axis, show on left-menu, descri
 2015,ENERGY,Commercial and Institutional,,2415.7652396302, ,,
 2016,ENERGY,Commercial and Institutional,,2445.89564912562, ,,
 2017,ENERGY,Commercial and Institutional,,2497.36925755776, ,,
-1990,ENERGY,Residential,,4587.45124832943, ,,
+1990,ENERGY,Residential,,4587.45124832943, ,,"Personal residences including homes, apartment hotels, condominiums and farm-houses."
 1991,ENERGY,Residential,,4472.23398809756, ,,
 1992,ENERGY,Residential,,4355.14500019885, ,,
 1993,ENERGY,Residential,,4856.89277461893, ,,
@@ -365,7 +365,7 @@ year, category a, category b, category c, value, axis, show on left-menu, descri
 2015,ENERGY,Residential,,3954.42906744993, ,,
 2016,ENERGY,Residential,,3985.91418366045, ,,
 2017,ENERGY,Residential,,4401.25599504194, ,,
-1990,ENERGY,Agriculture and Forestry,,323.38624390333, ,,
+1990,ENERGY,Agriculture and Forestry,,323.38624390333, ,,"Forestry,  logging  service,  agricultural  industry  activities;  on-site  machinery  operation  and from space heating."
 1991,ENERGY,Agriculture and Forestry,,375.28793987567, ,,
 1992,ENERGY,Agriculture and Forestry,,372.84336842902, ,,
 1993,ENERGY,Agriculture and Forestry,,374.853109412, ,,
@@ -421,7 +421,7 @@ year, category a, category b, category c, value, axis, show on left-menu, descri
 2015,ENERGY,Transport,,25079.3946062365, ,,
 2016,ENERGY,Transport,,25569.6225385395, ,,
 2017,ENERGY,Transport,,26178.4809457437, ,,
-1990,ENERGY,Domestic Aviation,,1339.36769463382, ,,
+1990,ENERGY,Domestic Aviation,,1339.36769463382, ,,"Canadian registered airlines flying domestically within Canada and originating in B.C., including commercial, private, and agricultural flights"
 1991,ENERGY,Domestic Aviation,,1201.91534895882, ,,
 1992,ENERGY,Domestic Aviation,,1188.1676681146, ,,
 1993,ENERGY,Domestic Aviation,,1133.96656393773, ,,
@@ -449,7 +449,7 @@ year, category a, category b, category c, value, axis, show on left-menu, descri
 2015,ENERGY,Domestic Aviation,,1309.12307580297, ,,
 2016,ENERGY,Domestic Aviation,,1333.90222309222, ,,
 2017,ENERGY,Domestic Aviation,,1372.50351846408, ,,
-1990,ENERGY,Road Transportation,,9599.97106077907, ,,
+1990,ENERGY,Road Transportation,,9599.97106077907, ,,"Vehicles in B.C. licensed to operate on roads."
 1991,ENERGY,Road Transportation,,9640.62220260118, ,,
 1992,ENERGY,Road Transportation,,9673.59027524257, ,,
 1993,ENERGY,Road Transportation,,9977.56377242542, ,,
@@ -701,7 +701,7 @@ year, category a, category b, category c, value, axis, show on left-menu, descri
 2015,ENERGY,Road Transportation,Propane and Natural Gas Vehicles,6.2390277897197, ,,
 2016,ENERGY,Road Transportation,Propane and Natural Gas Vehicles,6.17642858790788, ,,
 2017,ENERGY,Road Transportation,Propane and Natural Gas Vehicles,6.77495165512133, ,,
-1990,ENERGY,Railways,,1432.478740517, ,,
+1990,ENERGY,Railways,,1432.478740517, ,,"Locomotives operating in B.C."
 1991,ENERGY,Railways,,1389.43415274433, ,,
 1992,ENERGY,Railways,,1595.43017718667, ,,
 1993,ENERGY,Railways,,1622.841443333, ,,
@@ -729,7 +729,7 @@ year, category a, category b, category c, value, axis, show on left-menu, descri
 2015,ENERGY,Railways,,664.725107583333, ,,
 2016,ENERGY,Railways,,788.64671135, ,,
 2017,ENERGY,Railways,,986.259560075, ,,
-1990,ENERGY,Domestic Navigation,,960.842024575003, ,,
+1990,ENERGY,Domestic Navigation,,960.842024575003, ,,"Canadian registered marine vessels fuelled domestically in B.C."
 1991,ENERGY,Domestic Navigation,,1060.40412578962, ,,
 1992,ENERGY,Domestic Navigation,,1077.63081564034, ,,
 1993,ENERGY,Domestic Navigation,,1069.77882318347, ,,
@@ -925,7 +925,7 @@ year, category a, category b, category c, value, axis, show on left-menu, descri
 2015,ENERGY,Other Transportation,Off-Road Other Transportation,607.75089025134, ,,
 2016,ENERGY,Other Transportation,Off-Road Other Transportation,634.39055188123, ,,
 2017,ENERGY,Other Transportation,Off-Road Other Transportation,624.844295763912, ,,
-1990,ENERGY,Other Transportation,Pipeline Transport,863.177212159, ,,
+1990,ENERGY,Other Transportation,Pipeline Transport,863.177212159, ,,"Transportation and distribution of crude oil, natural gas and other products through a pipeline."
 1991,ENERGY,Other Transportation,Pipeline Transport,1115.92795425, ,,
 1992,ENERGY,Other Transportation,Pipeline Transport,1058.425308759, ,,
 1993,ENERGY,Other Transportation,Pipeline Transport,1136.848608775, ,,
@@ -981,7 +981,7 @@ year, category a, category b, category c, value, axis, show on left-menu, descri
 2015,ENERGY,Fugitive Sources,,4923.9220712171, ,,
 2016,ENERGY,Fugitive Sources,,4478.99404161455, ,,
 2017,ENERGY,Fugitive Sources,,4443.02795710411, ,,
-1990,ENERGY,Coal Mining,,836.010589431219, ,,
+1990,ENERGY,Coal Mining,,836.010589431219, ,,"Releases from exposed coal surfaces, coal rubble and venting within coal deposits; and  post-mining  activities  including  preparation,  transportation,  storage  and  final processing."
 1991,ENERGY,Coal Mining,,834.455928522183, ,,
 1992,ENERGY,Coal Mining,,576.298731232131, ,,
 1993,ENERGY,Coal Mining,,752.007148977362, ,,
@@ -1037,7 +1037,7 @@ year, category a, category b, category c, value, axis, show on left-menu, descri
 2015,ENERGY,Oil and Natural Gas,,4064.38318309363, ,,
 2016,ENERGY,Oil and Natural Gas,,3505.34275453755, ,,
 2017,ENERGY,Oil and Natural Gas,,3551.73519421161, ,,
-1990,ENERGY,Oil and Natural Gas,Oil,186.398766009178, ,,
+1990,ENERGY,Oil and Natural Gas,Oil,186.398766009178, ,,"Releases  from  wells,  flow  lines  and  batteries;  venting  of  casing  and  solution  gas; and evaporative losses from storage facilities."
 1991,ENERGY,Oil and Natural Gas,Oil,186.453015967523, ,,
 1992,ENERGY,Oil and Natural Gas,Oil,186.951224303588, ,,
 1993,ENERGY,Oil and Natural Gas,Oil,184.077538293025, ,,
@@ -1065,7 +1065,7 @@ year, category a, category b, category c, value, axis, show on left-menu, descri
 2015,ENERGY,Oil and Natural Gas,Oil,43.6783793580087, ,,
 2016,ENERGY,Oil and Natural Gas,Oil,48.236607881116, ,,
 2017,ENERGY,Oil and Natural Gas,Oil,44.905853363391, ,,
-1990,ENERGY,Oil and Natural Gas,Natural Gas,869.311989328935, ,,
+1990,ENERGY,Oil and Natural Gas,Natural Gas,869.311989328935, ,,"Releases from wells, gathering systems, field facilities and gas batteries; seal leaks; line cleaning operations; formation CO2removal;and pneumatic devices."
 1991,ENERGY,Oil and Natural Gas,Natural Gas,996.094015138345, ,,
 1992,ENERGY,Oil and Natural Gas,Natural Gas,1019.26756440842, ,,
 1993,ENERGY,Oil and Natural Gas,Natural Gas,1053.6282944098, ,,
@@ -1093,7 +1093,7 @@ year, category a, category b, category c, value, axis, show on left-menu, descri
 2015,ENERGY,Oil and Natural Gas,Natural Gas,765.168081162925, ,,
 2016,ENERGY,Oil and Natural Gas,Natural Gas,765.023369655298, ,,
 2017,ENERGY,Oil and Natural Gas,Natural Gas,778.489724846183, ,,
-1990,ENERGY,Oil and Natural Gas,Venting,1877.95624307802, ,,
+1990,ENERGY,Oil and Natural Gas,Venting,1877.95624307802, ,,"Equipment  leaks; process  vents  include  activities  such  as compressor  start-up venting and purging of lines during maintenance"
 1991,ENERGY,Oil and Natural Gas,Venting,1835.50827322913, ,,
 1992,ENERGY,Oil and Natural Gas,Venting,1956.51843408385, ,,
 1993,ENERGY,Oil and Natural Gas,Venting,1646.61214835624, ,,
@@ -1233,7 +1233,7 @@ year, category a, category b, category c, value, axis, show on left-menu, descri
 2015,INDUSTRIAL PROCESSES AND PRODUCT USE,Mineral Products,,1218.7510421621, ,,
 2016,INDUSTRIAL PROCESSES AND PRODUCT USE,Mineral Products,,1152.60959050868, ,,
 2017,INDUSTRIAL PROCESSES AND PRODUCT USE,Mineral Products,,1088.67578064542, ,,
-1990,INDUSTRIAL PROCESSES AND PRODUCT USE,Mineral Products,Cement Production,648.854671923093, ,,
+1990,INDUSTRIAL PROCESSES AND PRODUCT USE,Mineral Products,Cement Production,648.854671923093, ,,"Estimate process-related CO2emissions from the calcination of raw materialseither based on the amount and chemical composition of the products (clinkerplus dust leaving the kiln system) or based on the amount and composition of the raw materials entering the kiln."
 1991,INDUSTRIAL PROCESSES AND PRODUCT USE,Mineral Products,Cement Production,539.587421414169, ,,
 1992,INDUSTRIAL PROCESSES AND PRODUCT USE,Mineral Products,Cement Production,610.519593208487, ,,
 1993,INDUSTRIAL PROCESSES AND PRODUCT USE,Mineral Products,Cement Production,631.58794169997, ,,
@@ -1261,7 +1261,7 @@ year, category a, category b, category c, value, axis, show on left-menu, descri
 2015,INDUSTRIAL PROCESSES AND PRODUCT USE,Mineral Products,Cement Production,1024.1611142925, ,,
 2016,INDUSTRIAL PROCESSES AND PRODUCT USE,Mineral Products,Cement Production,1012.48230000777, ,,
 2017,INDUSTRIAL PROCESSES AND PRODUCT USE,Mineral Products,Cement Production,1000.78014926013, ,,
-1990,INDUSTRIAL PROCESSES AND PRODUCT USE,Mineral Products,Lime Production,169.169608291399, ,,
+1990,INDUSTRIAL PROCESSES AND PRODUCT USE,Mineral Products,Lime Production,169.169608291399, ,,"Emissions  from  dolomitic  lime  and  high-calcium lime  production. Lime  is  formed  by  the heating of limestone to decompose carbonates through calcination, which releases CO2"
 1991,INDUSTRIAL PROCESSES AND PRODUCT USE,Mineral Products,Lime Production,171.548482597537, ,,
 1992,INDUSTRIAL PROCESSES AND PRODUCT USE,Mineral Products,Lime Production,173.982665315219, ,,
 1993,INDUSTRIAL PROCESSES AND PRODUCT USE,Mineral Products,Lime Production,189.625795877425, ,,
@@ -1289,7 +1289,7 @@ year, category a, category b, category c, value, axis, show on left-menu, descri
 2015,INDUSTRIAL PROCESSES AND PRODUCT USE,Mineral Products,Lime Production,169.649622991149, ,,
 2016,INDUSTRIAL PROCESSES AND PRODUCT USE,Mineral Products,Lime Production,117.494256367174, ,,
 2017,INDUSTRIAL PROCESSES AND PRODUCT USE,Mineral Products,Lime Production,66.1820163586736, ,,
-1990,INDUSTRIAL PROCESSES AND PRODUCT USE,Mineral Products,Mineral Products Use,52.6291909212595, ,,
+1990,INDUSTRIAL PROCESSES AND PRODUCT USE,Mineral Products,Mineral Products Use,52.6291909212595, ,,"Calcination of limestone or dolomite into lime for purposes otherthan cement or lime produc-tion –these include glass manufacturing and non-ferrous metal production, pulp andpaper production,  flue  gas  desulphurization  and  wastewater  treatment/neutralization. CO₂is released  during  the  decomposition  of  soda  ash  (Na₂CO₃),  used  in  glass  manufacturing,chemical production, pulp and paper manufacturing and wastewater treatment."
 1991,INDUSTRIAL PROCESSES AND PRODUCT USE,Mineral Products,Mineral Products Use,59.0993986926567, ,,
 1992,INDUSTRIAL PROCESSES AND PRODUCT USE,Mineral Products,Mineral Products Use,54.5700466911987, ,,
 1993,INDUSTRIAL PROCESSES AND PRODUCT USE,Mineral Products,Mineral Products Use,52.6099606020495, ,,
@@ -1317,7 +1317,7 @@ year, category a, category b, category c, value, axis, show on left-menu, descri
 2015,INDUSTRIAL PROCESSES AND PRODUCT USE,Mineral Products,Mineral Products Use,24.9403048784541, ,,
 2016,INDUSTRIAL PROCESSES AND PRODUCT USE,Mineral Products,Mineral Products Use,22.6330341337303, ,,
 2017,INDUSTRIAL PROCESSES AND PRODUCT USE,Mineral Products,Mineral Products Use,21.7136150266232, ,,
-1990,INDUSTRIAL PROCESSES AND PRODUCT USE,Chemical Industry2,, -, ,,
+1990,INDUSTRIAL PROCESSES AND PRODUCT USE,Chemical Industry2,, -, ,,"Emissions from ammonia and petrochemical production."
 1991,INDUSTRIAL PROCESSES AND PRODUCT USE,Chemical Industry2,, -, ,,
 1992,INDUSTRIAL PROCESSES AND PRODUCT USE,Chemical Industry2,, -, ,,
 1993,INDUSTRIAL PROCESSES AND PRODUCT USE,Chemical Industry2,, -, ,,
@@ -1373,7 +1373,7 @@ year, category a, category b, category c, value, axis, show on left-menu, descri
 2015,INDUSTRIAL PROCESSES AND PRODUCT USE,Chemical Industry2,Adipic Acid Production, -, ,,
 2016,INDUSTRIAL PROCESSES AND PRODUCT USE,Chemical Industry2,Adipic Acid Production, -, ,,
 2017,INDUSTRIAL PROCESSES AND PRODUCT USE,Chemical Industry2,Adipic Acid Production, -, ,,
-1990,INDUSTRIAL PROCESSES AND PRODUCT USE,Metal Production,,1665.01885388629, ,,
+1990,INDUSTRIAL PROCESSES AND PRODUCT USE,Metal Production,,1665.01885388629, ,,"GHG  emissions  include  PFCs,  as  well  as  CO2,  formed  during  the  aluminium  smeltingprocess –including electrolytic reduction of alumina (Al2O3) with carbon-based anodes, pre-baking of carbon anodes and anode effects"
 1991,INDUSTRIAL PROCESSES AND PRODUCT USE,Metal Production,,1822.18864838573, ,,
 1992,INDUSTRIAL PROCESSES AND PRODUCT USE,Metal Production,,1821.39519854627, ,,
 1993,INDUSTRIAL PROCESSES AND PRODUCT USE,Metal Production,,1825.44880355407, ,,
@@ -1485,7 +1485,7 @@ year, category a, category b, category c, value, axis, show on left-menu, descri
 2015,INDUSTRIAL PROCESSES AND PRODUCT USE,Metal Production,SF6 Used in Magnesium Smelters and Casters,0.736906077348066, ,,
 2016,INDUSTRIAL PROCESSES AND PRODUCT USE,Metal Production,SF6 Used in Magnesium Smelters and Casters,0.960497237569061, ,,
 2017,INDUSTRIAL PROCESSES AND PRODUCT USE,Metal Production,SF6 Used in Magnesium Smelters and Casters,0.935303867403315, ,,
-1990,INDUSTRIAL PROCESSES AND PRODUCT USE,"Production and Consumption of Halocarbons, SF6 and NF33",, -, ,,
+1990,INDUSTRIAL PROCESSES AND PRODUCT USE,"Production and Consumption of Halocarbons, SF6 and NF33",, -, ,,"Fugitive releases of HFCs used in refrigeration and air conditioning, fire suppression, aero-sols,  solvent  cleaning,  foam  blowing,  and  other  applications –also  includes  emissions  of SF6from  electrical  generation,  transmission  and  distribution  equipment  and  magnesium casting"
 1991,INDUSTRIAL PROCESSES AND PRODUCT USE,"Production and Consumption of Halocarbons, SF6 and NF33",, -, ,,
 1992,INDUSTRIAL PROCESSES AND PRODUCT USE,"Production and Consumption of Halocarbons, SF6 and NF33",, -, ,,
 1993,INDUSTRIAL PROCESSES AND PRODUCT USE,"Production and Consumption of Halocarbons, SF6 and NF33",, -, ,,
@@ -1513,7 +1513,7 @@ year, category a, category b, category c, value, axis, show on left-menu, descri
 2015,INDUSTRIAL PROCESSES AND PRODUCT USE,"Production and Consumption of Halocarbons, SF6 and NF33",,1416.13326217622, ,,
 2016,INDUSTRIAL PROCESSES AND PRODUCT USE,"Production and Consumption of Halocarbons, SF6 and NF33",,1540.48527464039, ,,
 2017,INDUSTRIAL PROCESSES AND PRODUCT USE,"Production and Consumption of Halocarbons, SF6 and NF33",,1624.06888308419, ,,
-1990,INDUSTRIAL PROCESSES AND PRODUCT USE,Non-Energy Products from Fuels and Solvent Use,,693.50338006027, ,,
+1990,INDUSTRIAL PROCESSES AND PRODUCT USE,Non-Energy Products from Fuels and Solvent Use,,693.50338006027, ,,"CO2emissions  from  the  feedstock  use  of  waxes,  paraffin  and  unfinishedpetrochemical derivatives; residual and non-residual non-energy use of petroleum products coming out of the  oil  refineries; the  use  of  natural  gas  liquids  and  refinery  output  as  feedstocks  in  the chemical industry and the use of lubricants such as engine oil and grease in transportation and  industrial  applications;CO2emissions  from  non-energy  use  of  hydrocarbonsor  fossil fuels that are not reported elsewhere in the inventory."
 1991,INDUSTRIAL PROCESSES AND PRODUCT USE,Non-Energy Products from Fuels and Solvent Use,,650.699988762079, ,,
 1992,INDUSTRIAL PROCESSES AND PRODUCT USE,Non-Energy Products from Fuels and Solvent Use,,652.827305961541, ,,
 1993,INDUSTRIAL PROCESSES AND PRODUCT USE,Non-Energy Products from Fuels and Solvent Use,,665.48742617947, ,,
@@ -1541,7 +1541,7 @@ year, category a, category b, category c, value, axis, show on left-menu, descri
 2015,INDUSTRIAL PROCESSES AND PRODUCT USE,Non-Energy Products from Fuels and Solvent Use,,452.341220822004, ,,
 2016,INDUSTRIAL PROCESSES AND PRODUCT USE,Non-Energy Products from Fuels and Solvent Use,,505.374005667774, ,,
 2017,INDUSTRIAL PROCESSES AND PRODUCT USE,Non-Energy Products from Fuels and Solvent Use,,458.989406017899, ,,
-1990,INDUSTRIAL PROCESSES AND PRODUCT USE,Other Product Manufacture and Use,,77.3042793753905, ,,
+1990,INDUSTRIAL PROCESSES AND PRODUCT USE,Other Product Manufacture and Use,,77.3042793753905, ,,"GHG emissionsfrom the use of SF6in electricalequipment;N2O from medical applications and use as a propellant;PFC emissions from other contained product uses which are not ozone-depleting substances,substitutes or electronics industry-related; and CO2emissions from the use of urea in selective catalytic reduction."
 1991,INDUSTRIAL PROCESSES AND PRODUCT USE,Other Product Manufacture and Use,,76.5534224959759, ,,
 1992,INDUSTRIAL PROCESSES AND PRODUCT USE,Other Product Manufacture and Use,,73.5558869822133, ,,
 1993,INDUSTRIAL PROCESSES AND PRODUCT USE,Other Product Manufacture and Use,,75.9517868962676, ,,
@@ -1597,7 +1597,7 @@ year, category a, category b, category c, value, axis, show on left-menu, descri
 2015,AGRICULTURE,,,2263.65492117277, ,,
 2016,AGRICULTURE,,,2360.65463929143, ,,
 2017,AGRICULTURE,,,2390.15347658192, ,,
-1990,AGRICULTURE,Enteric Fermentation,,1357.65049552211, ,,
+1990,AGRICULTURE,Enteric Fermentation,,1357.65049552211, ,,"The digestive process of ruminant animals (such as cattle)  involves microbial fermentation  in the rumen, which produces CH4 emissions as a by-product."
 1991,AGRICULTURE,Enteric Fermentation,,1398.62543964745, ,,
 1992,AGRICULTURE,Enteric Fermentation,,1467.25454835741, ,,
 1993,AGRICULTURE,Enteric Fermentation,,1456.52126015238, ,,
@@ -1625,7 +1625,7 @@ year, category a, category b, category c, value, axis, show on left-menu, descri
 2015,AGRICULTURE,Enteric Fermentation,,1375.83627973331, ,,
 2016,AGRICULTURE,Enteric Fermentation,,1434.12603739442, ,,
 2017,AGRICULTURE,Enteric Fermentation,,1426.05905557268, ,,
-1990,AGRICULTURE,Manure Management,,312.121816823794, ,,
+1990,AGRICULTURE,Manure Management,,312.121816823794, ,,"The  decomposition  of  manure  by  microbial  organisms  produces  CH4emissions  as  a  by-product. The  nitrification  and  denitrification  of  nitrogen-containing  compounds  in  manure  results  in  the production of N2O. Factors impacting the production of CH4and N2O include manure characteristics and the aeration levels in various types of manure management systems."
 1991,AGRICULTURE,Manure Management,,320.396071614343, ,,
 1992,AGRICULTURE,Manure Management,,331.947310201464, ,,
 1993,AGRICULTURE,Manure Management,,335.973243617038, ,,
@@ -1681,7 +1681,7 @@ year, category a, category b, category c, value, axis, show on left-menu, descri
 2015,AGRICULTURE,Agricultural Soils,,468.07814868611, ,,
 2016,AGRICULTURE,Agricultural Soils,,494.496920789084, ,,
 2017,AGRICULTURE,Agricultural Soils,,527.336706167197, ,,
-1990,AGRICULTURE,Agricultural Soils,Direct Sources,394.731183928243, ,,
+1990,AGRICULTURE,Agricultural Soils,Direct Sources,394.731183928243, ,,"Direct  sources  of  N2O  emissions  include  application  of  synthetic  and manure-based  fertilizers, decomposition  of  crop  residue,  irrigation, losses  of  soil  organic  matter  through  mineralization, cultivation of organic soils and changes to tillage practices and summer fallow."
 1991,AGRICULTURE,Agricultural Soils,Direct Sources,336.136248139407, ,,
 1992,AGRICULTURE,Agricultural Soils,Direct Sources,371.16078005385, ,,
 1993,AGRICULTURE,Agricultural Soils,Direct Sources,392.302854383184, ,,
@@ -1709,7 +1709,7 @@ year, category a, category b, category c, value, axis, show on left-menu, descri
 2015,AGRICULTURE,Agricultural Soils,Direct Sources,370.995711236497, ,,
 2016,AGRICULTURE,Agricultural Soils,Direct Sources,393.499180640837, ,,
 2017,AGRICULTURE,Agricultural Soils,Direct Sources,421.370441823328, ,,
-1990,AGRICULTURE,Agricultural Soils,Indirect Sources,97.097108391302, ,,
+1990,AGRICULTURE,Agricultural Soils,Indirect Sources,97.097108391302, ,,"Nitrogen present in crop residue  and in synthetic and organic fertilizers (e.g., manure) applied to agricultural fields may be transported off-site through the air with subsequent re-deposition, or by leaching, erosion or runoff.  A portion of this nitrogen may undergo nitrification and denitrification, producing N2O emissions."
 1991,AGRICULTURE,Agricultural Soils,Indirect Sources,88.7824395033808, ,,
 1992,AGRICULTURE,Agricultural Soils,Indirect Sources,99.1572431746678, ,,
 1993,AGRICULTURE,Agricultural Soils,Indirect Sources,101.515633974162, ,,
@@ -1737,7 +1737,7 @@ year, category a, category b, category c, value, axis, show on left-menu, descri
 2015,AGRICULTURE,Agricultural Soils,Indirect Sources,97.0824374496134, ,,
 2016,AGRICULTURE,Agricultural Soils,Indirect Sources,100.997740148247, ,,
 2017,AGRICULTURE,Agricultural Soils,Indirect Sources,105.966264343869, ,,
-1990,AGRICULTURE,Field Burning of Agricultural Residues,, -, ,,
+1990,AGRICULTURE,Field Burning of Agricultural Residues,, -, ,,"The  burning  of  crop  residues  as  a  matter  of  convenience  and  for  the  purpose  of  disease  control through residue removals."
 1991,AGRICULTURE,Field Burning of Agricultural Residues,, -, ,,
 1992,AGRICULTURE,Field Burning of Agricultural Residues,, -, ,,
 1993,AGRICULTURE,Field Burning of Agricultural Residues,, -, ,,
@@ -1765,7 +1765,7 @@ year, category a, category b, category c, value, axis, show on left-menu, descri
 2015,AGRICULTURE,Field Burning of Agricultural Residues,, -, ,,
 2016,AGRICULTURE,Field Burning of Agricultural Residues,, -, ,,
 2017,AGRICULTURE,Field Burning of Agricultural Residues,, -, ,,
-1990,AGRICULTURE,"Liming, Urea Application and Other Carbon-containing Fertilizers",,25.1903618818952, ,,
+1990,AGRICULTURE,"Liming, Urea Application and Other Carbon-containing Fertilizers",,25.1903618818952, ,,"Includes a portion of dolomite contained in the lime consumption data; amount and composition of the urea or urea-based fertilizers applied annually, and the quantity of carbon contained in the urea that is released as CO2after hydrolysis."
 1991,AGRICULTURE,"Liming, Urea Application and Other Carbon-containing Fertilizers",,22.961725185525, ,,
 1992,AGRICULTURE,"Liming, Urea Application and Other Carbon-containing Fertilizers",,29.322801575295, ,,
 1993,AGRICULTURE,"Liming, Urea Application and Other Carbon-containing Fertilizers",,30.6538906666667, ,,
@@ -1821,7 +1821,7 @@ year, category a, category b, category c, value, axis, show on left-menu, descri
 2015,WASTE,,,3646.30034599861, ,,
 2016,WASTE,,,3635.55087836716, ,,
 2017,WASTE,,,3621.05964944753, ,,
-1990,WASTE,Solid Waste Disposal,,3773.57968252595, ,,
+1990,WASTE,Solid Waste Disposal,,3773.57968252595, ,,"Organic wastes sent to landfills are decomposed through anaerobic (i.e., without oxygen) digestion by  bacteria  and  other  microorganisms.  By-products  of  this  process  include  GHG  emissions.  This category includes CH4emissions from municipal solid waste landfills and wood waste landfills."
 1991,WASTE,Solid Waste Disposal,,3876.3116233662, ,,
 1992,WASTE,Solid Waste Disposal,,3789.0224375391, ,,
 1993,WASTE,Solid Waste Disposal,,3568.39487682622, ,,
@@ -1849,7 +1849,7 @@ year, category a, category b, category c, value, axis, show on left-menu, descri
 2015,WASTE,Solid Waste Disposal,,3403.93368813748, ,,
 2016,WASTE,Solid Waste Disposal,,3383.17417351223, ,,
 2017,WASTE,Solid Waste Disposal,,3364.60618331325, ,,
-1990,WASTE,Biological Treatment of Solid Waste,, -, ,,
+1990,WASTE,Biological Treatment of Solid Waste,, -, ,,"Composting and anaerobic digestion at biogas facilities of solid waste (CH4and N2O emissions)."
 1991,WASTE,Biological Treatment of Solid Waste,,0.93401216, ,,
 1992,WASTE,Biological Treatment of Solid Waste,,4.26295808, ,,
 1993,WASTE,Biological Treatment of Solid Waste,,7.591904, ,,
@@ -1877,7 +1877,7 @@ year, category a, category b, category c, value, axis, show on left-menu, descri
 2015,WASTE,Biological Treatment of Solid Waste,,94.25761536, ,,
 2016,WASTE,Biological Treatment of Solid Waste,,101.59026688, ,,
 2017,WASTE,Biological Treatment of Solid Waste,,101.59026688, ,,
-1990,WASTE,Wastewater Treatment and Discharge,,103.113717469706, ,,
+1990,WASTE,Wastewater Treatment and Discharge,,103.113717469706, ,,"The  amount  of organic  matter  and  microorganisms  in  wastewater  is  reduced  through  aerobic  (i.e., “with oxygen”) and anaerobic digestion. Both methods involve addition of bacteria to wastewater to break down organic matter and microorganisms. By-products of this process include GHG emissions. This category includes CH4and N2O emissions from municipal wastewater treatment operations."
 1991,WASTE,Wastewater Treatment and Discharge,,105.409698831839, ,,
 1992,WASTE,Wastewater Treatment and Discharge,,108.664004282225, ,,
 1993,WASTE,Wastewater Treatment and Discharge,,112.88042283669, ,,
@@ -1905,7 +1905,7 @@ year, category a, category b, category c, value, axis, show on left-menu, descri
 2015,WASTE,Wastewater Treatment and Discharge,,148.109042501132, ,,
 2016,WASTE,Wastewater Treatment and Discharge,,149.790950934937, ,,
 2017,WASTE,Wastewater Treatment and Discharge,,151.782134614284, ,,
-1990,WASTE,Incineration and Open Burning of Waste,,21.1260301095333, ,,
+1990,WASTE,Incineration and Open Burning of Waste,,21.1260301095333, ,,"Some municipalities incinerate waste to reduce the amount of solid waste sent to landfills. By-products of  incineration  of  bio-based  and  hydrocarbon-based  wastes  include  GHG  emissions.  This  category includes CO2and N2O emissions from waste incineration, excluding CO2emissions from bio-based waste, which is considered carbon-neutral. CH4emissions are not included due to lack of data."
 1991,WASTE,Incineration and Open Burning of Waste,,19.1360301095333, ,,
 1992,WASTE,Incineration and Open Burning of Waste,,19.1360320076333, ,,
 1993,WASTE,Incineration and Open Burning of Waste,,17.304898556, ,,
