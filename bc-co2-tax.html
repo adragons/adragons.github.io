@@ -11,8 +11,43 @@
         <content>
 <script type="text/javascript">
 let year_csv = `1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017`;
-let data = [];
-let chart
+let population = {
+    1990:3292111,
+    1991:3373787,
+    1992:3468802,
+    1993:3567772,
+    1994:3676075,
+    1995:3777390,
+    1996:3874317,
+    1997:3948583,
+    1998:3983113,
+    1999:4011375,
+    2000:4039230,
+    2001:4076950,
+    2002:4100564,
+    2003:4124482,
+    2004:4155651,
+    2005:4196062,
+    2006:4241794,
+    2007:4290984,
+    2008:4349336,
+    2009:4410506,
+    2010:4465546,
+    2011:4502104,
+    2012:4566769,
+    2013:4630077,
+    2014:4707103,
+    2015:4776388,
+    2016:4859250,
+    2017:4922152,
+    2018:4991687
+};
+let dataset = [];
+let dataset_json = '';
+let CO2 = 'co2e';
+let CO2PERCAPITA = 'co2/capita';
+let unit = CO2;
+let chart;
 // colours from: http://godsnotwheregodsnot.blogspot.com/2013/11/kmeans-color-quantization-seeding.html
 let colours = [/*"#FFFF00",*/ "#1CE6FF", "#FF34FF", "#FF4A46", "#008941", "#006FA6", "#A30059",
 /*"#FFDBE5",*/ "#7A4900", "#0000A6", "#63FFAC", "#B79762", "#004D43", "#8FB0FF", "#997D87",
@@ -105,7 +140,7 @@ function csv_line (line) {
 function select (where) {
     let fields = ['year', 'category a', 'category b', 'category c', 'emissions'];
     var filters = [];
-    let ret = data;
+    let ret = JSON.parse(dataset_json);
     for (let i in where) {
         let op    = where[i].match(/[\!\<\>=]+/)[0];
         let value = where[i].split(op)[1];
@@ -136,15 +171,16 @@ function select (where) {
                 break;
         }
     }
+
     return ret;
 
 }
 
+let graph_debounce = 0;
 function graph() {
-    clearTimeout(graph.debounce);
-    graph.debounce = setTimeout(_graph, 33);
+    clearTimeout(graph_debounce);
+    graph_debounce = setTimeout(_graph, 33);
 }
-graph.debounce = 0;
 
 function _graph () {
     qsa('label.hide').forEach(e => {e.className = '';});
@@ -183,17 +219,24 @@ function _graph () {
                 case 'category b':
                     delete where['category a'];
             }
-            let data = select(where);
+            let result = select(where);
 
             if (threshold > 0) {
-                let min = Math.min(...data.map(r => r[4]));
+                let min = Math.min(...result.map(r => r[4]));
                 if (min < threshold) {
                     return;
                 }
             }
 
+            if (unit === CO2PERCAPITA) {
+                result = result.map(function(r) {
+                    r[4] /= (population[r[0]]/1000);
+                    return r;
+                });
+            }
+
             if (showTrends) {
-                let trendline = calcTrendline(data.map((r, i) => [(+minYear)+i, r[4]]));
+                let trendline = calcTrendline(result.map((r, i) => [(+minYear)+i, r[4]]));
                 if (trendline) {
                     chart.data.datasets.push({
                         data: trendline,
@@ -203,7 +246,7 @@ function _graph () {
                 }
             }
             
-            let dataset = data.map(r => r[4]);
+            let dataset = result.map(r => r[4]);
             
             chart.data.datasets.push({
                 label: label,
@@ -233,7 +276,7 @@ function selectDecreasing () {
     selectChange('>');
 }
 function selectChange (op) {
-    qsa('input[type="checkbox"]').filter(e=>e.checked=false);
+    qsa('label[data-label] input[type="checkbox"]').filter(e=>e.checked=false);
     let trends = getTrends();
 
     if (op === '>') {
@@ -277,9 +320,9 @@ function getTrends () {
             case 'category b':
                 delete where['category a'];
         }
-        let data = select(where);
+        let result = select(where);
 
-        let trend = calcTrendline(data.map((r, i) => [(+minYear)+i, r[4]]));
+        let trend = calcTrendline(result.map((r, i) => [(+minYear)+i, r[4]]));
         trends.push({
             'label': label,
             'field': field,
@@ -317,11 +360,17 @@ function calcTrendline (data) {
     return data.map(l => (m*l[0]) + b);
 }
 
+function setUnit (u) {
+    unit = u;
+    graph();
+}
+
 function main () {
 
     let csv = this.responseText;
 
-    data = csv.split("\n").map(csv_line);
+    dataset = csv.split("\n").map(csv_line);
+    dataset_json = JSON.stringify(dataset)
     // console.log(data);
     let years = csv_line(year_csv);
 
@@ -387,7 +436,13 @@ function main () {
                 <label>Trend Lines: <input type="checkbox" id="trendline" onchange="graph()" /></label><br />
                 <button onclick="selectDecreasing()">Select Decreasing</button> <button onclick="selectIncreasing()">Select Increasing</button><br />
                 <button onclick="selectNone()">Unselect all</button><br />
-<br />
+                <br />
+                <fieldset>
+                    <legend>Unit</legend>
+                    <label>kt CO2e <input type="radio" name="unit" checked="checked" value="1" onchange="setUnit('${CO2}')" /></label><br />
+                    <label>t CO2e / per capita <input type="radio" name="unit" value="2" onchange="setUnit('${CO2PERCAPITA}')" /></label><br />
+                </fieldset>
+                <br />
                 <label style="color: #FFFF00" data-color="#FFFF00" data-field="category a" data-label="TOTAL">
                     <input type="checkbox"> <span></span> TOTAL
                 </label>
@@ -433,10 +488,6 @@ function main () {
                 tension: 0 // disables bezier curves
             },
             point: {
-                // hoverBackgroundColor: makeHalfAsOpaque,
-                // radius: adjustRadiusBasedOnData,
-                // pointStyle: alternatePointStyles,
-                // hoverRadius: 15,
             }
         },
         animation: {
@@ -467,6 +518,10 @@ oReq.send();
 </script>
         </content>
         <img src="tax-pop-graph.png" />
-        <note>https://www2.gov.bc.ca/assets/gov/environment/climate-change/data/provincial-inventory/2017/2017_provincial_inventory.xlsx</note>
+        <br />
+        <note>
+            Population data: https://www2.gov.bc.ca/gov/content/data/statistics/people-population-community/population/population-estimates<br />
+            CO2 data: https://www2.gov.bc.ca/assets/gov/environment/climate-change/data/provincial-inventory/2017/2017_provincial_inventory.xlsx
+        </note>
     </body>
 </html>

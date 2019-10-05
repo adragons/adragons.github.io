@@ -75,6 +75,12 @@ clear: both; }
     flex-flow: row nowrap;
 }
 
+fieldset {
+    padding: 1rem;
+}
+
 body note:last-child {
-    opacity: 0.1;
+    opacity: 0.25;
+    padding: 2rem;
+    display: block;
 }
