@@ -48,6 +48,7 @@ let CO2 = 'co2e';
 let CO2PERCAPITA = 'co2/capita';
 let unit = CO2;
 let chart;
+let fields;
 // colours from: http://godsnotwheregodsnot.blogspot.com/2013/11/kmeans-color-quantization-seeding.html
 let colours = [/*"#FFFF00",*/ "#1CE6FF", "#FF34FF", "#FF4A46", "#008941", "#006FA6", "#A30059",
 /*"#FFDBE5",*/ "#7A4900", "#0000A6", "#63FFAC", "#B79762", "#004D43", "#8FB0FF", "#997D87",
@@ -138,7 +139,6 @@ function csv_line (line) {
 }
 
 function select (where) {
-    let fields = ['year', 'category a', 'category b', 'category c', 'emissions'];
     var filters = [];
     let ret = JSON.parse(dataset_json);
     for (let i in where) {
@@ -221,8 +221,11 @@ function _graph () {
             }
             let result = select(where);
 
+            let axis = 'co2';
+            if (result[0]) axis = result[0][5];
+
             if (threshold > 0) {
-                let min = Math.min(...result.map(r => r[4]));
+                let min = Math.min(...result.filter(r => r[5] === '').map(r => r[4]));
                 if (min < threshold) {
                     return;
                 }
@@ -230,7 +233,7 @@ function _graph () {
 
             if (unit === CO2PERCAPITA) {
                 result = result.map(function(r) {
-                    r[4] /= (population[r[0]]/1000);
+                    if (r[5] === '') r[4] /= (population[r[0]]/1000);
                     return r;
                 });
             }
@@ -239,6 +242,8 @@ function _graph () {
                 let trendline = calcTrendline(result.map((r, i) => [(+minYear)+i, r[4]]));
                 if (trendline) {
                     chart.data.datasets.push({
+                        label: label,
+                        yAxisID: axis,
                         data: trendline,
                         backgroundColor: Color(color).alpha(0.4).rgbString(),
                         borderColor: Color(color).alpha(0.4).rgbString()
@@ -250,6 +255,7 @@ function _graph () {
             
             chart.data.datasets.push({
                 label: label,
+                yAxisID: axis,
                 data: dataset,
                 backgroundColor: color,
                 borderColor: color
@@ -368,22 +374,21 @@ function setUnit (u) {
 function main () {
 
     let csv = this.responseText;
-
-    dataset = csv.split("\n").map(csv_line);
+    fields = csv.split("\n").slice(0, 1).map(csv_line)[0];
+    dataset = csv.split("\n").slice(1).map(csv_line);
     dataset_json = JSON.stringify(dataset)
     // console.log(data);
     let years = csv_line(year_csv);
 
-    let maxCo2 = Math.max(...select({
-        'category c': '!='
-    }).map(e => e[4]));
+    // Tried to make a programatic descision for this but in the end some arbitray value was better
+    let maxCo2 = 2000;
 
     let filterTableOptions = select({
         'year': '=1990',
-        'category a': '!=TOTAL'
     });
 
-    let html = `<div>`;
+    let leftMenuOptions = ``;
+    let html = ``;
 
     let superCategory = '';
     for (let i=0; i<filterTableOptions.length; i++) {
@@ -409,13 +414,20 @@ function main () {
             }
             superCategory = filterTableOptions[i][1];
         }
-        html += `
+
+        let str = `
         <label style="color: ${colours[i%colours.length]}"
             data-color="${colours[i%colours.length]}"
             data-field="${field}"
             data-label="${label}">
             <input type="checkbox" /> ${spacing}<span></span> ${label}
         </label><br />`;
+
+        if (filterTableOptions[i][6] == '1') {
+            leftMenuOptions += str;
+        } else {
+            html += str;
+        }
     }
 
     qsa('content') [0].innerHTML = `
@@ -443,23 +455,25 @@ function main () {
                     <label>t CO2e / per capita <input type="radio" name="unit" value="2" onchange="setUnit('${CO2PERCAPITA}')" /></label><br />
                 </fieldset>
                 <br />
-                <label style="color: #FFFF00" data-color="#FFFF00" data-field="category a" data-label="TOTAL">
+
+                ${leftMenuOptions}
+                <!--label style="color: #FFFF00" data-color="#FFFF00" data-field="category a" data-label="TOTAL">
                     <input type="checkbox"> <span></span> TOTAL
-                </label>
+                </label-->
         
                 <p style="white-space: break-spaces;">If the graph doesn't update try checking another box or fiddling with the sliders.</p>
             </div>
             <style>
-                .box.even {
-                    flex-wrap: wrap;
-                    justify-content: space-between;
-                }
-                .box.even div {
+                #source-checkboxes div {
                     margin: 10px;
+                    float: left;
+                    /* align-self: flex-start;*/
                 }
             </style>
-            <div class="box even" style="width: 80vw; max-width: 80vw; ">
+            <div id="source-checkboxes" style="width: 80vw; max-width: 80vw; ">
+                <div>
                 ${html}
+                <div class="clear"></div>
             </div>
 
         </div>
@@ -496,7 +510,35 @@ function main () {
         hover: {
             animationDuration: 0 // duration of animations when hovering an item
         },
-        responsiveAnimationDuration: 0 // animation duration after a resize
+        responsiveAnimationDuration: 0, // animation duration after a resize
+        scales: {
+            yAxes: [
+                {
+                    type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+                    display: true,
+                    position: 'left',
+                    id: 'co2',
+                },
+                {
+                    type: 'linear',
+                    display: true,
+                    position: 'right',
+                    id: 'population',
+                    gridLines: {
+                        drawOnChartArea: false,
+                    },
+                },
+                {
+                    type: 'linear',
+                    display: true,
+                    position: 'right',
+                    id: 'tax',
+                    gridLines: {
+                        drawOnChartArea: false,
+                    },
+                }
+            ]
+        }
     };
 
     chart = new Chart('chart-0', {
@@ -517,7 +559,6 @@ oReq.send();
 
 </script>
         </content>
-        <img src="tax-pop-graph.png" />
         <br />
         <note>
             Population data: https://www2.gov.bc.ca/gov/content/data/statistics/people-population-community/population/population-estimates<br />
