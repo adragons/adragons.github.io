@@ -566,23 +566,25 @@ function main () {
 
 
     let hash = window.location.hash.substr(1).split(',');
-    qsa('#minyearrange')[0].value = hash.shift();
-    qsa('#maxyearrange')[0].value = hash.shift();
-    qsa('#co2thresholdrange')[0].value = hash.shift();
-    qsa('#trendline')[0].checked = hash.shift();
-    let selectedUnit = hash.shift();
-    qsa('#unitco2')[0].checked = selectedUnit === CO2;
-    qsa('#unitco2percapita')[0].checked = selectedUnit === CO2;
+    if (hash.length > 1) {
+        qsa('#minyearrange')[0].value = hash.shift();
+        qsa('#maxyearrange')[0].value = hash.shift();
+        qsa('#co2thresholdrange')[0].value = hash.shift();
+        qsa('#trendline')[0].checked = hash.shift();
+        let selectedUnit = hash.shift();
+        qsa('#unitco2')[0].checked = selectedUnit === CO2;
+        qsa('#unitco2percapita')[0].checked = selectedUnit === CO2;
 
-    qsa('#minyearrange')[0].oninput();
-    qsa('#maxyearrange')[0].oninput();
-    qsa('#co2thresholdrange')[0].oninput();
-    qsa('label[data-label] input[type="checkbox"]').map(e=>e.checked=false);
+        qsa('#minyearrange')[0].oninput();
+        qsa('#maxyearrange')[0].oninput();
+        qsa('#co2thresholdrange')[0].oninput();
+        qsa('label[data-label] input[type="checkbox"]').map(e=>e.checked=false);
 
-    hash.forEach(e => {
-        e = decodeURIComponent(e);
-        qsa(`label[data-label="${e}"] input`)[0].checked=true;
-    });
+        hash.forEach(e => {
+            e = decodeURIComponent(e);
+            qsa(`label[data-label="${e}"] input`)[0].checked=true;
+        });
+    }
     graph();
 }
 
