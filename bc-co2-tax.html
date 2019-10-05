@@ -573,7 +573,7 @@ function main () {
         qsa('#trendline')[0].checked = hash.shift();
         let selectedUnit = hash.shift();
         qsa('#unitco2')[0].checked = selectedUnit === CO2;
-        qsa('#unitco2percapita')[0].checked = selectedUnit === CO2;
+        qsa('#unitco2percapita')[0].checked = selectedUnit !== CO2;
 
         qsa('#minyearrange')[0].oninput();
         qsa('#maxyearrange')[0].oninput();
