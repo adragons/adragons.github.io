@@ -113,7 +113,7 @@ year, category a, category b, category c, value, axis, show on left-menu, descri
 2015,ENERGY,,,49910.3629182229, ,,
 2016,ENERGY,,,51126.8238555877, ,,
 2017,ENERGY,,,52006.0526061694, ,,
-1990,ENERGY,Stationary Combustion Sources,,19498.3680207965, ,,
+1990,ENERGY,Stationary Combustion Sources,,19498.3680207965, ,,"Stationary  combustion  sources  are  emissions  from  stationary  devices  that  combust  solid,  liquid  or gaseous fuel in order to generate useful heat, coolingor electricity. Sources include boilers, combustion turbines,  engines,  incinerators  and  process  heaters.  Devices  used  to  transport  oil  and  gas  through pipelines are not included in this sub-sector."
 1991,ENERGY,Stationary Combustion Sources,,18276.2616696253, ,,
 1992,ENERGY,Stationary Combustion Sources,,17057.6145143775, ,,
 1993,ENERGY,Stationary Combustion Sources,,19286.0539131973, ,,
@@ -393,7 +393,7 @@ year, category a, category b, category c, value, axis, show on left-menu, descri
 2015,ENERGY,Agriculture and Forestry,,412.7258924, ,,
 2016,ENERGY,Agriculture and Forestry,,562.966009, ,,
 2017,ENERGY,Agriculture and Forestry,,574.5962111, ,,
-1990,ENERGY,Transport,,18575.7717582335, ,,
+1990,ENERGY,Transport,,18575.7717582335, ,,"The  transport sub-sectorwithin  the  energy  sector  includes  emissions  from  mobile  devices  that combust liquid or gaseous fuels for the purpose of generating useful energy for propulsion. Sources include road vehicle, marine and jet engines. Emissions from stationary combustion devices used to transport oil and gas through pipelines are also included in this sub-sector."
 1991,ENERGY,Transport,,18862.0098097391, ,,
 1992,ENERGY,Transport,,19092.2844797524, ,,
 1993,ENERGY,Transport,,19612.4282391567, ,,
@@ -953,7 +953,7 @@ year, category a, category b, category c, value, axis, show on left-menu, descri
 2015,ENERGY,Other Transportation,Pipeline Transport,1297.1340475, ,,
 2016,ENERGY,Other Transportation,Pipeline Transport,1444.8914325, ,,
 2017,ENERGY,Other Transportation,Pipeline Transport,1453.1157025, ,,
-1990,ENERGY,Fugitive Sources,,4114.50721886915, ,,
+1990,ENERGY,Fugitive Sources,,4114.50721886915, ,,"Fugitive  sources  are intentional  and unintentional  emissions  from  the  production,  processing, transmission, storage and delivery of fossil fuels, as well as the intentional combustion of fossil fuels not used to generate useful heat or electricity."
 1991,ENERGY,Fugitive Sources,,4008.86782478465, ,,
 1992,ENERGY,Fugitive Sources,,3964.85353135335, ,,
 1993,ENERGY,Fugitive Sources,,3896.19940497758, ,,
@@ -1177,7 +1177,7 @@ year, category a, category b, category c, value, axis, show on left-menu, descri
 2015,ENERGY,CO2 Transport and Storage,, -, ,,
 2016,ENERGY,CO2 Transport and Storage,, -, ,,
 2017,ENERGY,CO2 Transport and Storage,, -, ,,
-1990,INDUSTRIAL PROCESSES AND PRODUCT USE,,,3306.4799844577, ,,
+1990,INDUSTRIAL PROCESSES AND PRODUCT USE,,,3306.4799844577, ,,"ndustrial  processes  include activities  that  produce GHG  emissions not from  the  combustion  of  a hydrocarbon fuel, but rather from a reaction which chemically or physically transformsmaterials(i.e. non-energyrelatedGHG emissions from manufacturing processes and use of products)."
 1991,INDUSTRIAL PROCESSES AND PRODUCT USE,,,3319.67736234815, ,,
 1992,INDUSTRIAL PROCESSES AND PRODUCT USE,,,3386.85069670492, ,,
 1993,INDUSTRIAL PROCESSES AND PRODUCT USE,,,3440.71171480925, ,,
@@ -1569,7 +1569,7 @@ year, category a, category b, category c, value, axis, show on left-menu, descri
 2015,INDUSTRIAL PROCESSES AND PRODUCT USE,Other Product Manufacture and Use,,70.6904584747446, ,,
 2016,INDUSTRIAL PROCESSES AND PRODUCT USE,Other Product Manufacture and Use,,74.2553631270256, ,,
 2017,INDUSTRIAL PROCESSES AND PRODUCT USE,Other Product Manufacture and Use,,93.7423954905558, ,,
-1990,AGRICULTURE,,,2186.79096654734, ,,
+1990,AGRICULTURE,,,2186.79096654734, ,,"Emissions  associated  with  stationary  farm  equipment  (e.g.  heating  greenhouses),  and  on-farm transportation  (e.g.  tractors),  are  included  in  the  stationary  combustion  and  transport  sections respectively. "
 1991,AGRICULTURE,,,2166.9019240901, ,,
 1992,AGRICULTURE,,,2298.84268336268, ,,
 1993,AGRICULTURE,,,2316.96688279343, ,,
@@ -1793,7 +1793,7 @@ year, category a, category b, category c, value, axis, show on left-menu, descri
 2015,AGRICULTURE,"Liming, Urea Application and Other Carbon-containing Fertilizers",,23.1509757925791, ,,
 2016,AGRICULTURE,"Liming, Urea Application and Other Carbon-containing Fertilizers",,26.2970945665573, ,,
 2017,AGRICULTURE,"Liming, Urea Application and Other Carbon-containing Fertilizers",,28.4970945665573, ,,
-1990,WASTE,,,3897.81943010519, ,,
+1990,WASTE,,,3897.81943010519, ,,"GHG emissions from the waste sector are related to the treatment and disposal of solid waste and wastewater. Waste sector emissions are influenced by the quantity of waste sent to, as well as the amount of CH4captured from landfills."
 1991,WASTE,,,4001.79136446757, ,,
 1992,WASTE,,,3921.08543190896, ,,
 1993,WASTE,,,3706.17210221891, ,,
