@@ -47,6 +47,7 @@ let dataset = [];
 let dataset_json = '';
 let CO2 = 'co2e';
 let CO2PERCAPITA = 'co2pcapita';
+let stacked = false;
 let unit = CO2;
 let chart;
 let fields;
@@ -184,6 +185,7 @@ function graph() {
 }
 
 function _graph () {
+    chart.options.scales.yAxes[0].stacked = stacked;
     qsa('label.hide').forEach(e => {e.className = '';});
     qsa('label[data-label] span').forEach(e => {e.innerHTML = ''});
     let minYear = document.getElementById('minyear').innerText;
@@ -204,6 +206,7 @@ function _graph () {
         `${threshold},`+
         (showTrends?'1':'0')+`,`+
         `${unit},`+
+        (stacked?'1':'0')+`,`+
         qsa('label[data-label] input[type="checkbox"]').filter(e => e.checked).map(e=>encodeURIComponent(e.parentElement.getAttribute('data-label'))).join(',');
 
     qsa('input[type="checkbox"]')
@@ -378,6 +381,11 @@ function setUnit (u) {
     graph();
 }
 
+function setChartStacked (s) {
+    stacked = s;
+    graph();
+}
+
 function main () {
 
     let csv = this.responseText;
@@ -464,6 +472,12 @@ function main () {
                     <label>t CO2e / per capita <input type="radio" name="unit" value="2" onchange="setUnit('${CO2PERCAPITA}')" id="unitco2percapita" /></label><br />
                 </fieldset>
                 <br />
+                <fieldset>
+                    <legend>CO2</legend>
+                    <label>Normal <input type="radio" name="stacked" checked="checked" value="1" onchange="setChartStacked(false)" id="stackedfalse" /></label><br />
+                    <label>Stacked <input type="radio" name="stacked" value="2" onchange="setChartStacked(true)" id="stackedtrue" /></label><br />
+                </fieldset>
+                <br />
 
                 ${leftMenuOptions}
                 <!--label style="color: #FFFF00" data-color="#FFFF00" data-field="category a" data-label="TOTAL">
@@ -532,6 +546,7 @@ function main () {
                     display: true,
                     position: 'left',
                     id: 'co2',
+                    stacked: stacked
                 },
                 {
                     type: 'linear',
@@ -575,6 +590,11 @@ function main () {
         let selectedUnit = hash.shift();
         qsa('#unitco2')[0].checked = selectedUnit === CO2;
         qsa('#unitco2percapita')[0].checked = selectedUnit !== CO2;
+
+        let s = (hash.shift() == 1);
+        stacked = s;
+        qsa('#stackedfalse')[0].checked = !s;
+        qsa('#stackedtrue')[0].checked = s;
 
         qsa('#minyearrange')[0].oninput();
         qsa('#maxyearrange')[0].oninput();
