@@ -590,6 +590,7 @@ function main () {
         let selectedUnit = hash.shift();
         qsa('#unitco2')[0].checked = selectedUnit === CO2;
         qsa('#unitco2percapita')[0].checked = selectedUnit !== CO2;
+        unit = selectedUnit === CO2 ? CO2 : CO2PERCAPITA;
 
         let s = (hash.shift() == 1);
         stacked = s;
