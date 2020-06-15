@@ -1,3 +1,6 @@
+:root {
+    --serif: "Crimson Pro", Georgia, 'Times New Roman', Times, serif;
+}
 * { 
     padding: 0;
     margin: 0;
@@ -13,8 +16,7 @@ html {
 
 body {
     margin: 0;
-    line-height: 1;
-    font-weight: 500;
+    line-height: 1.25rem;
     color: #222; 
     display: block;
     height: 100%;
@@ -35,7 +37,7 @@ table {
 a {
 color: #1EAEDB; }
 a:hover {
-color: #0FA0CE; }
+color: rgb(15, 160, 206); }
 
 
 /* Code
@@ -51,7 +53,9 @@ code {
 pre > code {
     display: block;
     padding: 1rem 1.5rem;
-    white-space: pre; }
+    white-space: pre;
+    
+}
 
 /* Misc
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -63,28 +67,47 @@ hr {
 
 h1 {
     font-size: 2rem;
-    margin-bottom: 2rem;
+    /* margin-bottom: 2rem; */
+    font-family: var(--serif);
 }
 h2 {
     font-size: 1.75rem;
-    margin-bottom: 1.75rem;
+    /* margin-bottom: 1.75rem; */
+    font-family: var(--serif);
 }
 h3 {
     font-size: 1.5rem;
-    margin-bottom: 1.5rem;
+    /* margin-bottom: 1.5rem; */
+    font-family: var(--serif);
 }
 h4 {
     font-size: 1.25rem;
-    margin-bottom: 1.25rem;
+    /* margin-bottom: 1.25rem; */
+    font-family: var(--serif);
 }
 h5 {
     font-size: 1rem;
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
+    font-family: var(--serif);
 }
 h6 {
     font-size: .75rem;
-    margin-bottom: .75rem;
+    /* margin-bottom: .75rem; */
+    font-family: var(--serif);
 }
+
+p+h1, p+h2, p+h3, p+h4, p+h5, p+h6 {
+    /* margin-top: 1rem; */
+}
+
+dt {
+    font-family: var(--serif);
+}
+
+p {
+    margin: 1rem 0;
+}
+
 
 ul {
     margin-left: 1rem;
@@ -114,4 +137,29 @@ body note:last-child {
     opacity: 0.4;
     padding: 2rem;
     display: block;
+}
+
+._960 {
+    max-width: 960px;
+    margin: 0 auto;
+}
+blockquote {
+    padding: 1rem;
+    margin: 1rem;
+    font-family: var(--serif);
+    border-left: 1px solid #0FA0CE;
+    background-color: rgba(15, 160, 206, 0.07);
+    font-size: 1.1rem;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+ol, ul {
+    margin-left: 2rem;
+    padding: 1rem 0;
 }
