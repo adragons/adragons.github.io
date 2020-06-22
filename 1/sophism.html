@@ -1541,6 +1541,7 @@
     if (window.location.hash.substr(1) !== '') {
         qsa('#search')[0].value = window.location.hash.substr(1);
         onSearchInputChange();
+        qsa('#search')[0].scrollIntoView();
     }
 
     </script>
