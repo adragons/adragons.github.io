@@ -57,6 +57,9 @@ year, category a, category b, category c, value, axis, show on left-menu, descri
 2016,Tax $/t,,,30,tax,1
 2017,Tax $/t,,,30,tax,1
 2018,Tax $/t,,,35,tax,1
+2019,Tax $/t,,,40,tax,1
+2020,Tax $/t,,,45,tax,1
+2021,Tax $/t,,,50,tax,1
 1990,TOTAL,,,55853.095450, ,1, 
 1991,TOTAL,,,54621.385302, ,1, 
 1992,TOTAL,,,53636.440674, ,1, 
