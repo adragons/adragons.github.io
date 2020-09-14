@@ -12,7 +12,7 @@
     <body>
         <content>
 <script type="text/javascript">
-let year_csv = `1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017`;
+let year_csv = `1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018`;
 let population = {
     1990:3292111,
     1991:3373787,
@@ -367,7 +367,7 @@ function main () {
                 <label>Min Year: <span id="minyear">2008</span><br />
                     <input type="range" oninput="document.getElementById('minyear').innerHTML=this.value; graph()" min="${years[0]}" max="${years[years.length-1]}" value="2008" id="minyearrange" />
                 </label><br />
-                <label>Max Year: <span id="maxyear">2017</span><br />
+                <label>Max Year: <span id="maxyear">2018</span><br />
                     <input type="range" oninput="document.getElementById('maxyear').innerHTML=this.value; graph()" min="${years[0]}" max="${years[years.length-1]}" value="${years[years.length-1]}" id="maxyearrange" />
                 </label><br />
                 <label>CO2 threshold: <span id="co2threshold">0</span><br />
