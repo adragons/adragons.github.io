@@ -10,6 +10,19 @@
         content img {
             max-width: 100%;
         }
+        .video {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%;
+        }
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
     </style>
 </head>
 <body>
@@ -18,15 +31,20 @@
         <p><a href="../index.html">&lt; Index</a></p>
         
         <p>
-            This gentleman: <br /> <br />
+            This gentleman: 
         
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/aokNwKx7gM8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </p>
+        <div class="video">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/aokNwKx7gM8" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <p>
+            has attempted to disprove the argument presented by this gentleman:
 
-            <br /> <br />
-            has attempted to disprove the argument presented by this gentleman:<br /> <br />
-
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/Ztu5Y5obWPk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <br /> <br />
+        </p>
+        <div class="video">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Ztu5Y5obWPk" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <p>
             but he failed. Here is why.
         </p>
 
