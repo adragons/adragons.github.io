@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>Matt Parker Rebuttal</title>
+    <title>Do these scatter plots reveal fraudulent vote-switching in Michigan? Yes</title>
     <link href="../css.css" rel="stylesheet" />
     
     <style>
@@ -24,14 +24,19 @@
             height: 100%;
         }
     </style>
+
+    <script>
+    </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
     <content class="" style="margin:0 auto; max-width:80ch;">
         <p><a href="../index.html">&lt; Index</a></p>
-        
+        <h1>Do these scatter plots reveal fraudulent vote-switching in Michigan? Yes</h1>
         <p>
-            This gentleman: 
+            Maybe. This gentleman: 
         
         </p>
         <div class="video">
@@ -73,13 +78,6 @@
         </p>
 
         <p>
-            In math/statistics speak:
-            For a precinct, use the straight party vote as the mean (&#x3bc;) political affiliation, and also the expected value.
-            
-            By subtracting the mean from presidential vote, we get an equivalent of the 
-            standard deviation for that precinct. (&sigma; = X - &#x3bc;) (By omitting the square and square root the direction is kept.)
-        </p>
-        <p>
             In people speak:
             The x-axis is a precincts affiliation to a party and the y-axis is
             how much more/less it voted relatively for the respective candidate.<br />
@@ -102,6 +100,68 @@
 
         </p>
 
+        <p>
+            In math/statistics speak:
+            For a precinct, use the straight party vote as the mean (&#x3bc;) political affiliation.
+            
+            By subtracting the mean from presidential vote, we get an equivalent of the 
+            standard deviation for that precinct. (&sigma; = X - &#x3bc;) (By omitting the square and square root the direction is kept.)
+        </p>
+        <p>
+
+            Imagine some function f(x) that correctly guesses if a voter is going to 
+            vote for Biden. 
+
+            <blockquote>
+            note: Not sure why the text is wonky
+            </blockquote>
+
+            \begin{align}   
+            f({Biden}) = 1 \\
+            f({not Biden}) = 0
+            \end{align}
+            
+            To find the mean for a precinct sum the votes, divide by number of votes.
+
+            $$   
+            \mu =   \frac{1}{n} \sum_{i=1}^n f(x)
+            $$
+
+            Apply this for a sample population using the straight party votes (SPV):
+
+            $$
+            \text{Mean Democrat vote} = {\text{Democrat SPV} \over \text{Democrat SPV + Republican SPV}}
+            $$
+
+            Next we will calculate the standard deviation for a precinct using the 
+            remaining voter population (the ones that selected Biden/Trump manually.)
+
+            $$
+            \sigma = \sqrt{ \frac{1}{n} \sum_{i=1}^n (X_n - \mu)^2} \\
+            $$
+
+            There is only one sample per precinct so it simplifies: 
+
+            \begin{align}   
+            n=1 \\
+            \sigma = \sqrt{ (X - \mu)^2}
+            \end{align}
+
+            Considering:
+
+            \begin{align}   
+            |\sigma| = \sqrt{ (X - \mu)^2} \\
+            \end{align}
+            
+            and we want to know if a precinct voted more/less for Biden than it's
+            Democrat-ness and vice/versa for Trump/Republican, remove the square/square root:
+
+            \begin{align}   
+            \sigma = X - \mu
+            \end{align}
+
+            This is what the plots represent (&#x3bc;, &sigma;).
+        </p>
 
     </content>
 
