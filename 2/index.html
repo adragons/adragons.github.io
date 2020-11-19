@@ -104,8 +104,7 @@
             In math/statistics speak:
             For a precinct, use the straight party vote as the mean (&#x3bc;) political affiliation.
             
-            By subtracting the mean from presidential vote, we get an equivalent of the 
-            standard deviation for that precinct. (&sigma; = X - &#x3bc;) (By omitting the square and square root the direction is kept.)
+            By subtracting the presidential vote from the SPV, we get a change in mean.
         </p>
         <p>
 
@@ -130,37 +129,24 @@
             Apply this for a sample population using the straight party votes (SPV):
 
             $$
-            \text{Mean Democrat vote} = {\text{Democrat SPV} \over \text{Democrat SPV + Republican SPV}}
+            \mu_1 = \text{Mean Democrat vote} = {\text{Democrat SPV} \over \text{Democrat SPV + Republican SPV}}
             $$
 
-            Next we will calculate the standard deviation for a precinct using the 
+            Next we will calculate the mean again using the 
             remaining voter population (the ones that selected Biden/Trump manually.)
 
             $$
-            \sigma = \sqrt{ \frac{1}{n} \sum_{i=1}^n (X_n - \mu)^2} \\
+            \mu_2 = \text{Mean Biden vote} = {\text{Biden votes} \over \text{Biden Votes + Trump Votes}}
             $$
 
-            There is only one sample per precinct so it simplifies: 
+
+            To compare, plot the change in mean versus the SPV mean:
 
             \begin{align}   
-            n=1 \\
-            \sigma = \sqrt{ (X - \mu)^2}
+            \Delta\mu = \mu_1 - \mu_2\\
+            (\mu{_1}, \Delta\mu)
             \end{align}
 
-            Considering:
-
-            \begin{align}   
-            |\sigma| = \sqrt{ (X - \mu)^2} \\
-            \end{align}
-            
-            and we want to know if a precinct voted more/less for Biden than it's
-            Democrat-ness and vice/versa for Trump/Republican, remove the square/square root:
-
-            \begin{align}   
-            \sigma = X - \mu
-            \end{align}
-
-            This is what the plots represent (&#x3bc;, &sigma;).
         </p>
 
     </content>
