@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<countries>
+<country flag="🇦🇨" name="Ascension Island" />
+<country flag="🇦🇩" name="Andorra" />
+<country flag="🇦🇪" name="United Arab Emirates" />
+<country flag="🇦🇫" name="Afghanistan" />
+<country flag="🇦🇬" name="Antigua &amp; Barbuda" />
+<country flag="🇦🇮" name="Anguilla" />
+<country flag="🇦🇱" name="Albania" />
+<country flag="🇦🇲" name="Armenia" />
+<country flag="🇦🇴" name="Angola" />
+<country flag="🇦🇶" name="Antarctica" />
+<country flag="🇦🇷" name="Argentina" />
+<country flag="🇦🇸" name="American Samoa" />
+<country flag="🇦🇹" name="Austria" />
+<country flag="🇦🇺" name="Australia" />
+<country flag="🇦🇼" name="Aruba" />
+<country flag="🇦🇽" name="Åland Islands" />
+<country flag="🇦🇿" name="Azerbaijan" />
+<country flag="🇧🇦" name="Bosnia &amp; Herzegovina" />
+<country flag="🇧🇧" name="Barbados" />
+<country flag="🇧🇩" name="Bangladesh" />
+<country flag="🇧🇪" name="Belgium" />
+<country flag="🇧🇫" name="Burkina Faso" />
+<country flag="🇧🇬" name="Bulgaria" />
+<country flag="🇧🇭" name="Bahrain" />
+<country flag="🇧🇮" name="Burundi" />
+<country flag="🇧🇯" name="Benin" />
+<country flag="🇧🇱" name="St. Barthélemy" />
+<country flag="🇧🇲" name="Bermuda" />
+<country flag="🇧🇳" name="Brunei" />
+<country flag="🇧🇴" name="Bolivia" />
+<country flag="🇧🇶" name="Caribbean Netherlands" />
+<country flag="🇧🇷" name="Brazil" />
+<country flag="🇧🇸" name="Bahamas" />
+<country flag="🇧🇹" name="Bhutan" />
+<country flag="🇧🇻" name="Bouvet Island" />
+<country flag="🇧🇼" name="Botswana" />
+<country flag="🇧🇾" name="Belarus" />
+<country flag="🇧🇿" name="Belize" />
+<country flag="🇨🇦" name="Canada" />
+<country flag="🇨🇨" name="Cocos (Keeling) Islands" />
+<country flag="🇨🇩" name="Congo - Kinshasa" />
+<country flag="🇨🇫" name="Central African Republic" />
+<country flag="🇨🇫" name="CAR" />
+<country flag="🇨🇬" name="Congo - Brazzaville" />
+<country flag="🇨🇭" name="Switzerland" />
+<country flag="🇨🇮" name="Côte d’Ivoire" />
+<country flag="🇨🇰" name="Cook Islands" />
+<country flag="🇨🇱" name="Chile" />
+<country flag="🇨🇲" name="Cameroon" />
+<country flag="🇨🇳" name="China" />
+<country flag="🇨🇴" name="Colombia" />
+<country flag="🇨🇵" name="Clipperton Island" />
+<country flag="🇨🇷" name="Costa Rica" />
+<country flag="🇨🇺" name="Cuba" />
+<country flag="🇨🇻" name="Cape Verde" />
+<country flag="🇨🇼" name="Curaçao" />
+<country flag="🇨🇽" name="Christmas Island" />
+<country flag="🇨🇾" name="Cyprus" />
+<country flag="🇨🇿" name="Czechia" />
+<country flag="🇩🇪" name="Germany" />
+<country flag="🇩🇬" name="Diego Garcia" />
+<country flag="🇩🇯" name="Djibouti" />
+<country flag="🇩🇰" name="Denmark" />
+<country flag="🇩🇲" name="Dominica" />
+<country flag="🇩🇴" name="Dominican Republic" />
+<country flag="🇩🇿" name="Algeria" />
+<country flag="🇪🇦" name="Ceuta &amp; Melilla" />
+<country flag="🇪🇨" name="Ecuador" />
+<country flag="🇪🇪" name="Estonia" />
+<country flag="🇪🇬" name="Egypt" />
+<country flag="🇪🇭" name="Western Sahara" />
+<country flag="🇪🇷" name="Eritrea" />
+<country flag="🇪🇸" name="Spain" />
+<country flag="🇪🇹" name="Ethiopia" />
+<country flag="🇪🇺" name="European Union" />
+<country flag="🇫🇮" name="Finland" />
+<country flag="🇫🇯" name="Fiji" />
+<country flag="🇫🇰" name="Falkland Islands" />
+<country flag="🇫🇲" name="Micronesia" />
+<country flag="🇫🇴" name="Faroe Islands" />
+<country flag="🇫🇷" name="France" />
+<country flag="🇬🇦" name="Gabon" />
+<country flag="🇬🇧" name="United Kingdom" />
+<country flag="🇬🇩" name="Grenada" />
+<country flag="🇬🇪" name="Georgia" />
+<country flag="🇬🇫" name="French Guiana" />
+<country flag="🇬🇬" name="Guernsey" />
+<country flag="🇬🇭" name="Ghana" />
+<country flag="🇬🇮" name="Gibraltar" />
+<country flag="🇬🇱" name="Greenland" />
+<country flag="🇬🇲" name="Gambia" />
+<country flag="🇬🇳" name="Guinea" />
+<country flag="🇬🇵" name="Guadeloupe" />
+<country flag="🇬🇶" name="Equatorial Guinea" />
+<country flag="🇬🇷" name="Greece" />
+<country flag="🇬🇸" name="South Georgia &amp; South Sandwich Islands" />
+<country flag="🇬🇹" name="Guatemala" />
+<country flag="🇬🇺" name="Guam" />
+<country flag="🇬🇼" name="Guinea-Bissau" />
+<country flag="🇬🇾" name="Guyana" />
+<country flag="🇭🇰" name="Hong Kong SAR China" />
+<country flag="🇭🇲" name="Heard &amp; McDonald Islands" />
+<country flag="🇭🇳" name="Honduras" />
+<country flag="🇭🇷" name="Croatia" />
+<country flag="🇭🇹" name="Haiti" />
+<country flag="🇭🇺" name="Hungary" />
+<country flag="🇮🇨" name="Canary Islands" />
+<country flag="🇮🇩" name="Indonesia" />
+<country flag="🇮🇪" name="Ireland" />
+<country flag="🇮🇱" name="Israel" />
+<country flag="🇮🇲" name="Isle of Man" />
+<country flag="🇮🇳" name="India" />
+<country flag="🇮🇴" name="British Indian Ocean Territory" />
+<country flag="🇮🇶" name="Iraq" />
+<country flag="🇮🇷" name="Iran" />
+<country flag="🇮🇸" name="Iceland" />
+<country flag="🇮🇹" name="Italy" />
+<country flag="🇯🇪" name="Jersey" />
+<country flag="🇯🇲" name="Jamaica" />
+<country flag="🇯🇴" name="Jordan" />
+<country flag="🇯🇵" name="Japan" />
+<country flag="🇰🇪" name="Kenya" />
+<country flag="🇰🇬" name="Kyrgyzstan" />
+<country flag="🇰🇭" name="Cambodia" />
+<country flag="🇰🇮" name="Kiribati" />
+<country flag="🇰🇲" name="Comoros" />
+<country flag="🇰🇳" name="St. Kitts &amp; Nevis" />
+<country flag="🇰🇵" name="North Korea" />
+<country flag="🇰🇷" name="South Korea" />
+<country flag="🇰🇼" name="Kuwait" />
+<country flag="🇰🇾" name="Cayman Islands" />
+<country flag="🇰🇿" name="Kazakhstan" />
+<country flag="🇱🇦" name="Laos" />
+<country flag="🇱🇧" name="Lebanon" />
+<country flag="🇱🇨" name="St. Lucia" />
+<country flag="🇱🇮" name="Liechtenstein" />
+<country flag="🇱🇰" name="Sri Lanka" />
+<country flag="🇱🇷" name="Liberia" />
+<country flag="🇱🇸" name="Lesotho" />
+<country flag="🇱🇹" name="Lithuania" />
+<country flag="🇱🇺" name="Luxembourg" />
+<country flag="🇱🇻" name="Latvia" />
+<country flag="🇱🇾" name="Libya" />
+<country flag="🇲🇦" name="Morocco" />
+<country flag="🇲🇨" name="Monaco" />
+<country flag="🇲🇩" name="Moldova" />
+<country flag="🇲🇪" name="Montenegro" />
+<country flag="🇲🇫" name="St. Martin" />
+<country flag="🇲🇬" name="Madagascar" />
+<country flag="🇲🇭" name="Marshall Islands" />
+<country flag="🇲🇰" name="Macedonia" />
+<country flag="🇲🇱" name="Mali" />
+<country flag="🇲🇲" name="Myanmar (Burma)" />
+<country flag="🇲🇳" name="Mongolia" />
+<country flag="🇲🇴" name="Macao SAR China" />
+<country flag="🇲🇵" name="Northern Mariana Islands" />
+<country flag="🇲🇶" name="Martinique" />
+<country flag="🇲🇷" name="Mauritania" />
+<country flag="🇲🇸" name="Montserrat" />
+<country flag="🇲🇹" name="Malta" />
+<country flag="🇲🇺" name="Mauritius" />
+<country flag="🇲🇻" name="Maldives" />
+<country flag="🇲🇼" name="Malawi" />
+<country flag="🇲🇽" name="Mexico" />
+<country flag="🇲🇾" name="Malaysia" />
+<country flag="🇲🇿" name="Mozambique" />
+<country flag="🇳🇦" name="Namibia" />
+<country flag="🇳🇨" name="New Caledonia" />
+<country flag="🇳🇪" name="Niger" />
+<country flag="🇳🇫" name="Norfolk Island" />
+<country flag="🇳🇬" name="Nigeria" />
+<country flag="🇳🇮" name="Nicaragua" />
+<country flag="🇳🇱" name="Netherlands" />
+<country flag="🇳🇴" name="Norway" />
+<country flag="🇳🇵" name="Nepal" />
+<country flag="🇳🇷" name="Nauru" />
+<country flag="🇳🇺" name="Niue" />
+<country flag="🇳🇿" name="New Zealand" />
+<country flag="🇴🇲" name="Oman" />
+<country flag="🇵🇦" name="Panama" />
+<country flag="🇵🇪" name="Peru" />
+<country flag="🇵🇫" name="French Polynesia" />
+<country flag="🇵🇬" name="Papua New Guinea" />
+<country flag="🇵🇭" name="Philippines" />
+<country flag="🇵🇰" name="Pakistan" />
+<country flag="🇵🇱" name="Poland" />
+<country flag="🇵🇲" name="St. Pierre &amp; Miquelon" />
+<country flag="🇵🇳" name="Pitcairn Islands" />
+<country flag="🇵🇷" name="Puerto Rico" />
+<country flag="🇵🇸" name="Palestinian Territories" />
+<country flag="🇵🇸" name="Pal. Auth." />
+<country flag="🇵🇹" name="Portugal" />
+<country flag="🇵🇼" name="Palau" />
+<country flag="🇵🇾" name="Paraguay" />
+<country flag="🇶🇦" name="Qatar" />
+<country flag="🇷🇪" name="Réunion" />
+<country flag="🇷🇴" name="Romania" />
+<country flag="🇷🇸" name="Serbia" />
+<country flag="🇷🇺" name="Russia" />
+<country flag="🇷🇺" name="Chechnya" />
+<country flag="🇷🇺" name="Dagestan" />
+<country flag="🇷🇼" name="Rwanda" />
+<country flag="🇸🇦" name="Saudi Arabia" />
+<country flag="🇸🇧" name="Solomon Islands" />
+<country flag="🇸🇨" name="Seychelles" />
+<country flag="🇸🇩" name="Sudan" />
+<country flag="🇸🇪" name="Sweden" />
+<country flag="🇸🇬" name="Singapore" />
+<country flag="🇸🇭" name="St. Helena" />
+<country flag="🇸🇮" name="Slovenia" />
+<country flag="🇸🇯" name="Svalbard &amp; Jan Mayen" />
+<country flag="🇸🇰" name="Slovakia" />
+<country flag="🇸🇱" name="Sierra Leone" />
+<country flag="🇸🇲" name="San Marino" />
+<country flag="🇸🇳" name="Senegal" />
+<country flag="🇸🇴" name="Somalia" />
+<country flag="🇸🇷" name="Suriname" />
+<country flag="🇸🇸" name="South Sudan" />
+<country flag="🇸🇹" name="São Tomé &amp; Príncipe" />
+<country flag="🇸🇻" name="El Salvador" />
+<country flag="🇸🇽" name="Sint Maarten" />
+<country flag="🇸🇾" name="Syria" />
+<country flag="🇸🇿" name="Eswatini" />
+<country flag="🇹🇦" name="Tristan da Cunha" />
+<country flag="🇹🇨" name="Turks &amp; Caicos Islands" />
+<country flag="🇹🇩" name="Chad" />
+<country flag="🇹🇫" name="French Southern Territories" />
+<country flag="🇹🇬" name="Togo" />
+<country flag="🇹🇭" name="Thailand" />
+<country flag="🇹🇯" name="Tajikistan" />
+<country flag="🇹🇰" name="Tokelau" />
+<country flag="🇹🇱" name="Timor-Leste" />
+<country flag="🇹🇲" name="Turkmenistan" />
+<country flag="🇹🇳" name="Tunisia" />
+<country flag="🇹🇴" name="Tonga" />
+<country flag="🇹🇷" name="Turkey" />
+<country flag="🇹🇹" name="Trinidad &amp; Tobago" />
+<country flag="🇹🇻" name="Tuvalu" />
+<country flag="🇹🇼" name="Taiwan" />
+<country flag="🇹🇿" name="Tanzania" />
+<country flag="🇺🇦" name="Ukraine" />
+<country flag="🇺🇬" name="Uganda" />
+<country flag="🇺🇲" name="U.S. Outlying Islands" />
+<country flag="🇺🇳" name="United Nations" />
+<country flag="🇺🇸" name="United States" />
+<country flag="🇺🇸" name="USA" />
+<country flag="🇺🇸" name="U.S.A." />
+<country flag="🇺🇾" name="Uruguay" />
+<country flag="🇺🇿" name="Uzbekistan" />
+<country flag="🇻🇦" name="Vatican City" />
+<country flag="🇻🇨" name="St. Vincent &amp; Grenadines" />
+<country flag="🇻🇪" name="Venezuela" />
+<country flag="🇻🇬" name="British Virgin Islands" />
+<country flag="🇻🇮" name="U.S. Virgin Islands" />
+<country flag="🇻🇳" name="Vietnam" />
+<country flag="🇻🇺" name="Vanuatu" />
+<country flag="🇼🇫" name="Wallis &amp; Futuna" />
+<country flag="🇼🇸" name="Samoa" />
+<country flag="🇽🇰" name="Kosovo" />
+<country flag="🇾🇪" name="Yemen" />
+<country flag="🇾🇹" name="Mayotte" />
+<country flag="🇿🇦" name="South Africa" />
+<country flag="🇿🇲" name="Zambia" />
+<country flag="🇿🇼" name="Zimbabwe" />
+<country flag="🏴󠁧󠁢󠁥󠁮󠁧󠁿" name="England" />
+<country flag="🏴󠁧󠁢󠁳󠁣󠁴󠁿" name="Scotland" />
+<country flag="🏴󠁧󠁢󠁷󠁬󠁳󠁿" name="Wales" />
+</countries>
