@@ -91,7 +91,11 @@
             
                 <xsl:apply-templates/>
             </table>
-
+            <br />
+            <p>
+                Total killed: <xsl:value-of select="sum(//attack/@killed)" /><br />
+                Total injured: <xsl:value-of select="sum(//attack/@injured)" /><br />
+            </p>
             <div style="height: 100vh">
             </div>
 
