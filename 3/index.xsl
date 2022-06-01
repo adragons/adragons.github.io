@@ -77,7 +77,7 @@
             <h1>Jihad map</h1>
 
             <div id="map" style="height:70vh; margin: 0 -2em"></div>
-            <div style="margin-bottom: -4rem;z-index: 2;position: relative;">
+            <div style="">
                 <br />
                 <select onchange="selectCountry(this.value, true)" id="countryList">
                     <option value="">All Locations</option>
@@ -89,9 +89,11 @@
                         </option>
                     </xsl:for-each>
                 </select>
+                 &#160; &#160;
+                <z style="width:1rem;"></z> Injured: <span id="injured"><xsl:attribute name="data-count"><xsl:value-of select="sum(/casualties/a/@injured)" /></xsl:attribute></span>
+                 &#160; &#160;
+                <x style="width:1rem;"></x> Killed: <span id="killed"><xsl:attribute name="data-count"><xsl:value-of select="sum(/casualties/a/@killed)" /></xsl:attribute></span>
                 <br />
-                <z style="width:1rem;"></z> Injured: <span id="injured"><xsl:attribute name="data-count"><xsl:value-of select="sum(/casualties/a/@injured)" /></xsl:attribute></span><br />
-                <x style="width:1rem;"></x> Killed: <span id="killed"><xsl:attribute name="data-count"><xsl:value-of select="sum(/casualties/a/@killed)" /></xsl:attribute></span><br />
             </div>
 
             <div id="graph"></div>
@@ -193,7 +195,7 @@
                     }
                 }
             });
-
+            
             let highlight;
             let select = null;
 

@@ -8,16 +8,17 @@
         media-type="text/xml"
         omit-xml-declaration="yes"
         />
-    <xsl:variable name="width" select="814" />
+    <xsl:variable name="font_size" select="14" />
+    <xsl:param name="width" select="814" />
+    <xsl:param name="heightPerRow" select="$font_size * 3.5"/>
  
     <xsl:template match="/">
         <svg width="{$width}" height="60" xmlns="http://www.w3.org/2000/svg">
-            <xsl:variable name="font_size" select="14" />
-            <xsl:variable name="heightPerRow" select="$font_size * 3.5" />
 
             <xsl:attribute name="height">
                 <xsl:value-of select="(count(/casualties/a) + 2) * $heightPerRow"/>
             </xsl:attribute>
+
 
             <style><![CDATA[
             x {
@@ -47,58 +48,91 @@
             }
             p, foreignObject {
                 margin: 0;
-                overflow: scroll;
+                overflow: auto;
                 font: ]]><xsl:value-of select="$font_size" /><![CDATA[px Verdana, Helvetica, Arial, sans-serif;
             }
             ]]></style> 
             
-            <path stroke="black" fill="transparent" stroke-linecap="round" stroke-width="1">
-                <xsl:attribute name="d">
-                    <xsl:text>M </xsl:text><xsl:value-of select="$width div 2" /><xsl:text>,10</xsl:text>
-                    <xsl:text> l 0, </xsl:text><xsl:value-of select="count(/casualties/a) * $heightPerRow"/>
-                    <xsl:text> Z</xsl:text>
-                </xsl:attribute>
-            </path>
-            
-            <xsl:for-each select="/casualties/a">
-                <xsl:choose>
-                    <xsl:when test="position() mod 2 = 0">
+            <xsl:choose>
+                <xsl:when test="$width &lt; 800">
+                    <path stroke="black" fill="transparent" stroke-linecap="round" stroke-width="1">
+                        <xsl:attribute name="d">
+                            <xsl:text>M </xsl:text><xsl:value-of select="20" /><xsl:text>,0</xsl:text>
+                            <xsl:text> l 0, </xsl:text><xsl:value-of select="count(/casualties/a) * $heightPerRow"/>
+                            <xsl:text> Z</xsl:text>
+                        </xsl:attribute>
+                    </path>
+                    <xsl:for-each select="/casualties/a">
                         <path stroke="black" fill="transparent" stroke-linecap="round" stroke-width="1">
                             <xsl:attribute name="d">
-                                <xsl:text>M </xsl:text><xsl:value-of select="$width div 2" />,<xsl:value-of select="position() * $heightPerRow" /><xsl:text></xsl:text>
-                                <xsl:text> l -</xsl:text><xsl:text>20, 0</xsl:text>
-                            </xsl:attribute>
-                        </path>
-                        <foreignObject>
-                            <xsl:attribute name="width"><xsl:value-of select="$width div 2 - 40" /></xsl:attribute>
-                            <xsl:attribute name="height"><xsl:value-of select="$heightPerRow" /></xsl:attribute>
-                            <xsl:attribute name="x">20</xsl:attribute>
-                            <xsl:attribute name="y"><xsl:value-of select="position() * $heightPerRow - (2 * $font_size)" /></xsl:attribute>
-                            <p xmlns="http://www.w3.org/1999/xhtml">
-                                <xsl:call-template name="desc" />
-                            </p>
-                        </foreignObject>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <path stroke="black" fill="transparent" stroke-linecap="round" stroke-width="1">
-                            <xsl:attribute name="d">
-                                <xsl:text>M </xsl:text><xsl:value-of select="$width div 2" />,<xsl:value-of select="position() * $heightPerRow" /><xsl:text></xsl:text>
+                                <xsl:text>M </xsl:text><xsl:value-of select="20" />,<xsl:value-of select="position() * $heightPerRow" /><xsl:text></xsl:text>
                                 <xsl:text> l </xsl:text><xsl:text>20, 0</xsl:text>
                             </xsl:attribute>
                         </path>
                         <foreignObject>
-                            <xsl:attribute name="width"><xsl:value-of select="$width div 2 - 40" /></xsl:attribute>
+                            <xsl:attribute name="width"><xsl:value-of select="$width - 50" /></xsl:attribute>
                             <xsl:attribute name="height"><xsl:value-of select="$heightPerRow" /></xsl:attribute>
-                            <xsl:attribute name="x"><xsl:value-of select="$width div 2 + 30" /></xsl:attribute>
-                            <xsl:attribute name="y"><xsl:value-of select="position() * $heightPerRow - (2 * $font_size)" /></xsl:attribute>
+                            <xsl:attribute name="x"><xsl:value-of select="50" /></xsl:attribute>
+                            <xsl:attribute name="y"><xsl:value-of select="position() * $heightPerRow - (1 * $font_size)" /></xsl:attribute>
                             <p xmlns="http://www.w3.org/1999/xhtml">
                                 <xsl:call-template name="desc" />
                             </p>
                         </foreignObject>
-                    </xsl:otherwise>
+                    </xsl:for-each>
+                </xsl:when>
+                <xsl:otherwise>
+                    <path stroke="black" fill="transparent" stroke-linecap="round" stroke-width="1">
+                        <xsl:attribute name="d">
+                            <xsl:text>M </xsl:text><xsl:value-of select="$width div 2" /><xsl:text>,10</xsl:text>
+                            <xsl:text> l 0, </xsl:text><xsl:value-of select="count(/casualties/a) * $heightPerRow"/>
+                            <xsl:text> Z</xsl:text>
+                        </xsl:attribute>
+                    </path>
 
-                </xsl:choose>
-            </xsl:for-each>
+
+                    <xsl:for-each select="/casualties/a">
+                        <xsl:choose>
+                            <xsl:when test="position() mod 2 = 0">
+                                <path stroke="black" fill="transparent" stroke-linecap="round" stroke-width="1">
+                                    <xsl:attribute name="d">
+                                        <xsl:text>M </xsl:text><xsl:value-of select="$width div 2" />,<xsl:value-of select="position() * $heightPerRow" /><xsl:text></xsl:text>
+                                        <xsl:text> l -</xsl:text><xsl:text>20, 0</xsl:text>
+                                    </xsl:attribute>
+                                </path>
+                                <foreignObject>
+                                    <xsl:attribute name="width"><xsl:value-of select="$width div 2 - 40" /></xsl:attribute>
+                                    <xsl:attribute name="height"><xsl:value-of select="$heightPerRow" /></xsl:attribute>
+                                    <xsl:attribute name="x">20</xsl:attribute>
+                                    <xsl:attribute name="y"><xsl:value-of select="position() * $heightPerRow - (2 * $font_size)" /></xsl:attribute>
+                                    <p xmlns="http://www.w3.org/1999/xhtml">
+                                        <xsl:call-template name="desc" />
+                                    </p>
+                                </foreignObject>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <path stroke="black" fill="transparent" stroke-linecap="round" stroke-width="1">
+                                    <xsl:attribute name="d">
+                                        <xsl:text>M </xsl:text><xsl:value-of select="$width div 2" />,<xsl:value-of select="position() * $heightPerRow" /><xsl:text></xsl:text>
+                                        <xsl:text> l </xsl:text><xsl:text>20, 0</xsl:text>
+                                    </xsl:attribute>
+                                </path>
+                                <foreignObject>
+                                    <xsl:attribute name="width"><xsl:value-of select="$width div 2 - 40" /></xsl:attribute>
+                                    <xsl:attribute name="height"><xsl:value-of select="$heightPerRow" /></xsl:attribute>
+                                    <xsl:attribute name="x"><xsl:value-of select="$width div 2 + 30" /></xsl:attribute>
+                                    <xsl:attribute name="y"><xsl:value-of select="position() * $heightPerRow - (2 * $font_size)" /></xsl:attribute>
+                                    <p xmlns="http://www.w3.org/1999/xhtml">
+                                        <xsl:call-template name="desc" />
+                                    </p>
+                                </foreignObject>
+                            </xsl:otherwise>
+
+                        </xsl:choose>
+                    </xsl:for-each>
+                </xsl:otherwise>
+            </xsl:choose>
+
+            
         </svg>
 
     </xsl:template>

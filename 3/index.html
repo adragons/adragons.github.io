@@ -39,7 +39,9 @@
             restoreCounts();
         }
 
+
         function graph (q) {
+            window.graph.q = q;
             if ((q.country ?? '') == '') {
                 restoreAll();
                 return;
@@ -49,6 +51,11 @@
             queryProcessor.setParameter(null, 'sort', q.sort ?? query.default.sort);
             var fragment = queryProcessor.transformToDocument(xml, document);
             // console.log(fragment);
+
+            let contentWidth = document.querySelector('content > div:nth-child(4)').getClientRects()[0].width;
+            graphProcessor.setParameter(null, 'width', contentWidth);
+            graphProcessor.setParameter(null, 'heightPerRow', (14 * 3.5) + (1-(contentWidth/800))*(16*4));
+
             let svg = graphProcessor.transformToFragment(fragment, document);
 
             let graph = document.querySelector('#graph')
@@ -59,6 +66,14 @@
             document.querySelector('#killed').innerHTML = fragment.documentElement.getAttribute('killed');
             document.querySelector('#injured').innerHTML = fragment.documentElement.getAttribute('injured');
         }
+
+        window.addEventListener('resize', function(e){
+            if (window.resizeTimeout) clearTimeout(window.resizeTimeout);
+            if (graph.q)
+                window.resizeTimeout = setTimeout(_ => {
+                    graph(graph.q);
+                }, 100);
+        });
         
         let loaded = function() {
             let el = document.querySelectorAll('#load')[0];
