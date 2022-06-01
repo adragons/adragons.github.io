@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../css.css" />
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.14.1/build/ol.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.14.1/css/ol.css">
+    
+    <script type="text/javascript">
+        const xsltProcessor = new XSLTProcessor();
+        const queryProcessor = new XSLTProcessor();
+        const graphProcessor = new XSLTProcessor();
+        const domparser = new DOMParser()
+        let xsl = null;
+        let xml = null;
+
+        let tx = function() {
+            var fragment = xsltProcessor.transformToFragment(xml, document);
+            document.title = fragment.querySelector('title').innerHTML;
+            let htmlNode = document.body.parentElement;
+            htmlNode.removeChild(document.body);
+            htmlNode.appendChild(fragment.querySelector('body'));
+        };
+
+        function query(q) {
+            // console.log(query.default);
+            queryProcessor.setParameter(null, 'country', q.country ?? query.default.country);
+            queryProcessor.setParameter(null, 'sort', q.sort ?? query.default.sort);
+            var fragment = queryProcessor.transformToFragment(xml, document);
+            return Array.from(fragment.querySelectorAll('a'));
+        }
+
+        function restoreAll () {
+            let graph = document.querySelector('#graph')
+            for(let i in graph.childNodes) try { graph.removeChild(graph.childNodes[i]); }catch(e){}
+            restoreCounts();
+        }
+
+        function graph (q) {
+            if ((q.country ?? '') == '') {
+                restoreAll();
+                return;
+            }
+
+            queryProcessor.setParameter(null, 'country', q.country ?? query.default.country);
+            queryProcessor.setParameter(null, 'sort', q.sort ?? query.default.sort);
+            var fragment = queryProcessor.transformToDocument(xml, document);
+            // console.log(fragment);
+            let svg = graphProcessor.transformToFragment(fragment, document);
+
+            let graph = document.querySelector('#graph')
+            for(let i in graph.childNodes)
+                try { graph.removeChild(graph.childNodes[i]); } catch(E){}
+            graph.appendChild(svg.childNodes[0]);
+
+            document.querySelector('#killed').innerHTML = fragment.documentElement.getAttribute('killed');
+            document.querySelector('#injured').innerHTML = fragment.documentElement.getAttribute('injured');
+        }
+        
+        let loaded = function() {
+            let el = document.querySelectorAll('#load')[0];
+            let max = el.getAttribute('max');
+            el.value = el.value + 1;
+
+            if (el.value == el.max)
+                tx();
+        };
+        
+        fetch('data.xml')
+            .then(d => d.text())
+            .then(d => domparser.parseFromString(d, 'text/xml'))
+            .then(d => {
+                xml = d;
+            })
+            .then(loaded);
+
+        fetch('index.xsl')
+            .then(d => d.text())
+            .then(d => domparser.parseFromString(d, 'text/xml'))
+            .then(d => {
+                xsl = d;
+                xsltProcessor.importStylesheet(d);
+            })
+            .then(loaded);
+
+        fetch('graph.xsl')
+            .then(d => d.text())
+            .then(d => domparser.parseFromString(d, 'text/xml'))
+            .then(d => {
+                graphProcessor.importStylesheet(d);
+            })
+            .then(loaded);
+
+        fetch('query.xsl')
+            .then(d => d.text())
+            .then(d => domparser.parseFromString(d, 'text/xml'))
+            .then(d => {
+                try {
+                    queryProcessor.importStylesheet(d);
+                    query.default = {
+                        sort: queryProcessor.getParameter(null, 'sort') ?? 'descending',
+                        country: queryProcessor.getParameter(null, 'country')
+                    }
+                } catch (e) {
+                    console.log(e);
+                }
+            })
+            .then(loaded);
+
+    </script>
+</head>
+<body>
+    <h1 style="width:50vw; height: 1em; margin:5em auto 0 auto; display:block;">Loading</h1>
+    <progress style="width:50vw; height: 1em; margin:5em auto; display:block;" id="load" max="4" value="0"></progress>
+</body>
+</html>
