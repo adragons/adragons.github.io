@@ -191,7 +191,7 @@
 
                     let hash = window.location.hash.substr(1);
                     if (hash.length) {
-                        selectCountry(hash, true, true);
+                        selectCountry(getAltCoutryName(hash), true, true);
                     }
                 }
             });
