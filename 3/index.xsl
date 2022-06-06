@@ -189,7 +189,7 @@
 
                     map.set('hash-load', true);
 
-                    let hash = window.location.hash.substr(1);
+                    let hash = decodeURIComponent(window.location.hash.substr(1));
                     if (hash.length) {
                         selectCountry(getAltCoutryName(hash), true, true);
                     }
