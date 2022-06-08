@@ -258,6 +258,7 @@
                 'Scotland': 'United Kingdom',
                 'Bahrain': 'Qatar',
                 'CAR': 'Central African Republic',
+                'India': 'India',
                 'Maldives': 'India',
                 'Serbia': 'Republic of Serbia',
                 'Tanzania': 'United Republic of Tanzania'
